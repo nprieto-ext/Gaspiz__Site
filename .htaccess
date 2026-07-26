@@ -4,16 +4,28 @@
 RewriteEngine On
 RewriteBase /
 
+# Empêche Apache d'ajouter un slash aux répertoires réels.
+# Sans cette ligne, /blog serait redirigé vers /blog/ (le dossier des
+# articles) au lieu de servir blog.html.
+DirectorySlash Off
+
 # --- HTTPS forcé -------------------------------------------------------
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # --- Redirections 301 depuis les anciennes URLs WordPress --------------
-# Ces trois URLs étaient indexées par Google. Sans ces règles, elles
+# Ces URLs étaient indexées par Google. Sans ces règles, elles
 # renverraient 404 et le référencement acquis serait perdu.
+# /applicationnondisponible existe toujours à l'identique : pas de
+# redirection, la page est servie directement.
 RewriteRule ^telecharger-gaspiz-application-anti-gaspi/?$ /telecharger [R=301,L]
 RewriteRule ^commercants-gaspiz-application-commercants-guadeloupe-martinique-guyane/?$ /commercants [R=301,L]
-RewriteRule ^applicationnondisponible/?$ /telecharger [R=301,L]
+
+# --- Slash final retiré ------------------------------------------------
+# WordPress servait toutes ses URLs avec un slash final. On les ramène
+# vers la forme sans slash, qui est la forme canonique du nouveau site.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+?)/+$ /$1 [R=301,L]
 
 # --- URL canonique : /page.html -> /page -------------------------------
 # Le test sur THE_REQUEST ne matche que la requête d'origine du navigateur,
@@ -22,7 +34,8 @@ RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
 # --- Sert /commercants depuis commercants.html -------------------------
-RewriteCond %{REQUEST_FILENAME} !-d
+# Pas de condition !-d ici : /blog doit servir blog.html bien qu'un
+# dossier blog/ existe à côté.
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 

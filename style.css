@@ -2721,3 +2721,112 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Page "Application non disponible" — etapes numerotees
+   ============================================================ */
+.howto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.howto-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.howto-card h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.howto-sub {
+  font-size: 0.9rem;
+  color: var(--grey);
+  margin-bottom: 1.5rem;
+}
+
+.steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-list li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 3rem;
+  padding-bottom: 1.35rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--grey);
+}
+
+.steps-list li:last-child { padding-bottom: 0; }
+
+.steps-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--yellow);
+  color: var(--dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.steps-list li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 36px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border);
+}
+
+.steps-list strong { color: var(--dark); font-weight: 700; }
+
+.notice-box {
+  background: var(--yellow-pale);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--yellow);
+  border-radius: var(--radius-sm);
+  padding: 1.6rem 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.notice-box h4 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.notice-box p {
+  font-size: 0.92rem;
+  color: var(--grey);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+
+.notice-box p:last-child { margin-bottom: 0; }
+
+@media (max-width: 860px) {
+  .howto-grid { grid-template-columns: 1fr; }
+}
