@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaspiz — L'appli anti-gaspi de Guadeloupe, Martinique & Guyane</title>
+  <meta name="description" content="Réservez des paniers surprise à prix réduit chez vos commerçants locaux en Guadeloupe, Martinique et Guyane. Économisez jusqu'à 60% tout en luttant contre le gaspillage alimentaire avec Gaspiz." />
+  <meta name="keywords" content="anti gaspillage, panier surprise, Guadeloupe, Martinique, Guyane, application mobile, commerçants locaux, économies, gaspiz" />
+  <meta name="author" content="Gaspiz" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gaspiz.fr/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gaspiz — L'appli anti-gaspi de Guadeloupe, Martinique & Guyane" />
+  <meta property="og:description" content="Réservez des paniers surprise à prix réduit chez vos commerçants locaux et luttez contre le gaspillage alimentaire aux Antilles-Guyane." />
+  <meta property="og:image" content="https://gaspiz.fr/wp-content/uploads/2025/04/imagesite-Copier.webp" />
+  <meta property="og:url" content="https://gaspiz.fr/" />
+  <meta property="og:site_name" content="Gaspiz" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gaspiz — Anti-gaspi aux Antilles-Guyane" />
+  <meta name="twitter:description" content="Réservez des paniers surprise à prix réduit chez vos commerçants locaux." />
+  <meta name="twitter:image" content="https://gaspiz.fr/wp-content/uploads/2025/04/imagesite-Copier.webp" />
+
+  <!-- Schema.org MobileApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Gaspiz",
+    "description": "Application anti-gaspillage alimentaire permettant de réserver des paniers surprise chez les commerçants locaux en Guadeloupe, Martinique et Guyane.",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "FoodAndDrink",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "url": "https://gaspiz.fr"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Visuel du hero : préchargé car c'est le LCP de la page -->
+  <link rel="preload" as="image" href="imagesite-web.webp" imagesrcset="imagesite-web-800.webp 800w, imagesite-web.webp 1600w" imagesizes="(max-width: 768px) 88vw, (max-width: 1024px) 420px, 520px" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="https://gaspiz.fr/wp-content/uploads/2025/04/Gaspiz_avectitre_compress-300x99.png" alt="Logo Gaspiz" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="commercants.html">Commerçants</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="telecharger.html" class="nav-cta">Télécharger <span class="arrow-down">↓</span></a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-sticky">
+    <div class="hero-bg">
+      <div class="hero-blob blob1"></div>
+      <div class="hero-blob blob2"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content reveal">
+        <h1 class="hero-title">
+          L'application<br />
+          <span class="highlight"><span>anti-gaspillage</span></span> <span style="white-space: nowrap;">Antilles-Guyane</span>
+        </h1>
+        <p class="hero-subtitle">
+          Réservez des paniers surprise à prix réduit chez vos commerçants locaux. Vous économisez de l'argent, et chaque panier sauvé nous rapproche d'un avenir plus durable.
+        </p>
+        <div class="hero-cta" id="telecharger">
+          <a href="https://apps.apple.com/fr/app/gaspiz/id6738059463" target="_blank" rel="noopener" class="store-btn">
+            <img src="app-store.webp" alt="Disponible sur App Store" width="650" height="210" />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.mycompany.gaspiz" target="_blank" rel="noopener" class="store-btn">
+            <img src="play-store.webp" alt="Disponible sur Google Play" width="650" height="209" />
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual reveal reveal-right">
+        <div class="phone-wrapper">
+          <img
+            class="hero-shot"
+            src="imagesite-web.webp"
+            srcset="imagesite-web-800.webp 800w, imagesite-web.webp 1600w"
+            sizes="(max-width: 768px) 88vw, (max-width: 1024px) 420px, 520px"
+            width="1600" height="1448"
+            fetchpriority="high" decoding="async"
+            alt="L'application Gaspiz sur iPhone : liste des commerçants partenaires et paniers surprise à réserver près de chez vous"
+          />
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- CHIFFRES CLES -->
+  <section class="chiffres">
+    <div class="section-container">
+      <div class="chiffres-grid" style="margin-top: 0;">
+        <div class="chiffre-card reveal">
+          <div class="chiffre-number" data-target="20000">0</div>
+          <div class="chiffre-label">Utilisateurs</div>
+        </div>
+        <div class="chiffre-card reveal" style="--delay: 0.1s">
+          <div class="chiffre-number" data-target="70">0</div>
+          <div class="chiffre-label">Commerçants partenaires</div>
+        </div>
+        <div class="chiffre-card reveal" style="--delay: 0.2s">
+          <div class="chiffre-number" data-target="20000">0</div>
+          <div class="chiffre-label">Paniers commandés</div>
+        </div>
+        <div class="chiffre-card reveal" style="--delay: 0.3s">
+          <div class="chiffre-number">4,5/5</div>
+          <div class="chiffre-label">Note sur les stores</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT / CONCEPT TEASER -->
+  <section class="impact" id="impact">
+    <div class="section-container">
+      <div class="impact-grid">
+        <div class="impact-text reveal">
+          <p class="section-tag">Notre mission</p>
+          <h2 class="section-title">On lutte contre<br />le gaspillage <span class="highlight"><span>ensemble</span></span></h2>
+          <p class="section-desc">
+            Avec l'application Gaspiz, réduire le gaspillage n'a jamais été aussi facile en Guadeloupe, Martinique &amp; Guyane.<br />
+            En quelques clics, parcourez les commerçants partenaires, réservez un panier surprise et récupérez-le en magasin.<br />
+            Une application créée en Guadeloupe pour les Antilles-Guyane !
+          </p>
+          <ul class="impact-list">
+            <li><span class="check">✓</span> Jusqu'à 60% de réduction sur vos courses</li>
+            <li><span class="check">✓</span> Commerçants 100% locaux et vérifiés</li>
+            <li><span class="check">✓</span> Application 100% gratuite pour les acheteurs</li>
+            <li><span class="check">✓</span> Cumulez des points Gaspiz à chaque commande</li>
+          </ul>
+        </div>
+        <div class="impact-visual reveal reveal-right">
+          <img src="notification-gaspiz.webp" alt="Un utilisateur reçoit sur son téléphone une notification Gaspiz : un nouveau panier est disponible chez un commerçant près de chez lui" loading="lazy" width="794" height="623" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT CA MARCHE -->
+  <section class="comment" id="comment">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-tag">Simple &amp; rapide</p>
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <p class="section-desc">En 4 étapes, devenez un héros de l'anti-gaspi.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal" style="--delay: 0s">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><rect x="6" y="1.5" width="12" height="21" rx="2.5" fill="#ffffff"/><rect x="7.5" y="4" width="9" height="14.5" rx="0.5" fill="#241E0F"/><circle cx="12" cy="20" r="1" fill="#ffffff"/></svg>
+          </div>
+          <h3>Je réserve</h3>
+          <p>Je choisis un panier surprise disponible près de chez moi directement sur l'application.</p>
+        </div>
+        <div class="step reveal" style="--delay: 0.1s">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15zM22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zM6 15a.75.75 0 01.75-.75h3a.75.75 0 010 1.5h-3A.75.75 0 016 15zm9.75-.75a.75.75 0 000 1.5h1.5a.75.75 0 000-1.5h-1.5z"/></svg>
+          </div>
+          <h3>Je paie sur place</h3>
+          <p>Le paiement s'effectue directement chez le commerçant : espèces, carte ou tickets-resto.</p>
+        </div>
+        <div class="step reveal" style="--delay: 0.2s">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z"/></svg>
+          </div>
+          <h3>Je récupère</h3>
+          <p>Je me rends au commerce aux horaires indiqués et je récupère mon panier surprise.</p>
+        </div>
+        <div class="step reveal" style="--delay: 0.3s">
+          <div class="step-number">04</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24" fill="#ffffff" style="width: 100%; height: 100%;"><path fill-rule="evenodd" d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.71 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z" clip-rule="evenodd"/></svg>
+          </div>
+          <h3>Je profite</h3>
+          <p>Je découvre mon panier, je gagne des points Gaspiz et je recommence !</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES -->
+  <section class="zones">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-tag light">Nos territoires</p>
+        <h2 class="section-title">L'anti-gaspi s'étend<br />aux Antilles-Guyane</h2>
+      </div>
+      <div class="zones-grid">
+        <div class="zone-card active reveal">
+          <div class="zone-flag" aria-hidden="true">GP</div>
+          <h3>Guadeloupe</h3>
+          <span class="zone-status disponible">Disponible</span>
+        </div>
+        <div class="zone-card active reveal" style="--delay: 0.1s">
+          <div class="zone-flag" aria-hidden="true">MQ</div>
+          <h3>Martinique</h3>
+          <span class="zone-status disponible">Disponible</span>
+        </div>
+        <div class="zone-card active reveal" style="--delay: 0.2s">
+          <div class="zone-flag" aria-hidden="true">GF</div>
+          <h3>Guyane</h3>
+          <span class="zone-status disponible">Disponible</span>
+        </div>
+        <div class="zone-card soon reveal" style="--delay: 0.3s">
+          <div class="zone-flag" aria-hidden="true">MF</div>
+          <h3>Saint-Martin</h3>
+          <span class="zone-status bientot">Bientôt</span>
+        </div>
+        <div class="zone-card soon reveal" style="--delay: 0.4s">
+          <div class="zone-flag" aria-hidden="true">BL</div>
+          <h3>Saint-Barthélemy</h3>
+          <span class="zone-status bientot">Bientôt</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMERCANTS -->
+  <section class="commercants" id="commercants">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-tag">Partenaires</p>
+        <h2 class="section-title">Nos commerçants partenaires</h2>
+        <p class="section-desc">Plus de 70 commerces locaux nous font confiance.</p>
+      </div>
+      <div class="logos-track-wrapper">
+        <div class="logos-track">
+          <img src="https://gaspiz.fr/wp-content/uploads/2024/12/Logo_CarrefourExpress-150x150.png" alt="Carrefour Express" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/02/18.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/20.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/24.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/8.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/09/LOGO-SITE-GASPIZ-COMMERCANTS-7-150x150.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/02/14.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/19.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/13.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/13.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/21.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2024/12/Logo_Zabym-150x150.png" alt="Zabym" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/17.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/8.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/9.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/11.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/10.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/12.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/09/4-150x150.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/18.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/16.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/09/3-150x150.png" alt="Commerçant partenaire" />
+          <!-- Duplicate for infinite scroll -->
+          <img src="https://gaspiz.fr/wp-content/uploads/2024/12/Logo_CarrefourExpress-150x150.png" alt="Carrefour Express" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/02/18.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/20.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/24.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/8.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/09/LOGO-SITE-GASPIZ-COMMERCANTS-7-150x150.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/02/14.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/19.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/13.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/08/13.png" alt="Commerçant partenaire" />
+          <img src="https://gaspiz.fr/wp-content/uploads/2025/04/21.png" alt="Commerçant partenaire" />
+        </div>
+      </div>
+      <div class="commercant-cta reveal">
+        <p>Vous êtes commerçant ? Rejoignez le mouvement anti-gaspi.</p>
+        <a href="commercants.html" class="btn btn-dark">Devenir partenaire</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES VIDEO COMMERCANTS -->
+  <section class="commercants" style="background: var(--yellow-pale);">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-tag">Ils témoignent</p>
+        <h2 class="section-title">Nos commerçants satisfaits</h2>
+        <p class="section-desc">Découvrez en vidéo pourquoi ils ont rejoint Gaspiz.</p>
+      </div>
+      <div class="video-grid">
+        <div class="video-card reveal" data-yt-id="At83yVYYCDI" role="button" tabindex="0" aria-label="Lire la vidéo">
+          <div class="video-thumb">
+            <img src="soleil-fruits.webp" alt="Interview Soleil Fruits" loading="lazy" width="480" height="853" />
+            <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="#241E0F"/></svg></div>
+          </div>
+          <div class="video-card-body">
+            <div class="video-meta">Primeur · Guadeloupe</div>
+            <h3>Soleil Fruits</h3>
+            <span>Lire la vidéo</span>
+          </div>
+        </div>
+        <div class="video-card reveal" style="--delay: 0.1s" data-yt-id="zaISQR39f84" role="button" tabindex="0" aria-label="Lire la vidéo">
+          <div class="video-thumb">
+            <img src="mil-fle-traiteur.webp" alt="Interview Mil Flé Traiteur" loading="lazy" width="480" height="853" />
+            <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="#241E0F"/></svg></div>
+          </div>
+          <div class="video-card-body">
+            <div class="video-meta">Restaurant · Guadeloupe</div>
+            <h3>Mil Flé Traiteur</h3>
+            <span>Lire la vidéo</span>
+          </div>
+        </div>
+        <div class="video-card reveal" style="--delay: 0.2s" data-yt-id="DtSsnBks7xE" role="button" tabindex="0" aria-label="Lire la vidéo">
+          <div class="video-thumb">
+            <img src="les-plaisirs.webp" alt="Interview Les Plaisirs" loading="lazy" width="480" height="853" />
+            <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="#241E0F"/></svg></div>
+          </div>
+          <div class="video-card-body">
+            <div class="video-meta">Boulangerie · Guyane</div>
+            <h3>Les Plaisirs</h3>
+            <span>Lire la vidéo</span>
+          </div>
+        </div>
+        <div class="video-card reveal" style="--delay: 0.3s" data-yt-id="tmNCspqd6m8" role="button" tabindex="0" aria-label="Lire la vidéo">
+          <div class="video-thumb">
+            <img src="carrefour-express-gosier.webp" alt="Interview Carrefour Express Gosier" loading="lazy" width="480" height="853" />
+            <div class="video-play"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20" fill="#241E0F"/></svg></div>
+          </div>
+          <div class="video-card-body">
+            <div class="video-meta">Supermarché · Guadeloupe</div>
+            <h3>Carrefour Express Gosier</h3>
+            <span>Lire la vidéo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="blog-section" id="blog">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-tag">Actualités</p>
+        <h2 class="section-title">Le blog Gaspiz</h2>
+        <p class="section-desc">Nos coulisses, nos passages médias et l'actu de la lutte anti-gaspi, un article par mois.</p>
+      </div>
+      <div class="blog-grid">
+        <a href="blog/radio-transat-interview.html" class="blog-card reveal">
+          <div class="blog-card-cover" style="background: var(--white); display: flex; align-items: center; justify-content: center;"><img src="Logo_radio_Transat.webp" alt="Radio Transat" loading="lazy" style="width: 65%; height: auto; object-fit: contain;" width="640" height="255" /></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Juillet 2026</span> · <span>Média</span></div>
+            <h3>On est passé sur Radio Transat !</h3>
+            <p>Retour sur notre interview radio pour parler du concept Gaspiz, de nos débuts et de nos ambitions aux Antilles-Guyane. Écoutez le son de l'interview.</p>
+            <span class="blog-card-link">Écouter &amp; lire →</span>
+          </div>
+        </a>
+        <a href="blog/france-antilles-martinique.html" class="blog-card reveal" style="--delay: 0.1s">
+          <div class="blog-card-cover" style="background: var(--white); display: flex; align-items: center; justify-content: center;"><img src="https://gaspiz.fr/wp-content/uploads/2025/02/franceantilles.png" alt="France-Antilles Martinique" loading="lazy" style="width: 55%; height: auto; object-fit: contain;" /></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Novembre 2025</span> · <span>Média</span></div>
+            <h3>Gaspiz dans France-Antilles Martinique</h3>
+            <p>Une nouvelle étape pour notre aventure : notre initiative locale mise en avant au-delà de la Guadeloupe.</p>
+            <span class="blog-card-link">Lire l'article →</span>
+          </div>
+        </a>
+        <a href="blog/i-ja-le-guadeloupe-1ere.html" class="blog-card reveal" style="--delay: 0.2s">
+          <div class="blog-card-cover" style="background: var(--white); display: flex; align-items: center; justify-content: center;"><img src="https://gaspiz.fr/wp-content/uploads/2025/02/logo_guadeloupelapremiere.png" alt="Guadeloupe La 1ère" loading="lazy" style="width: 65%; height: auto; object-fit: contain;" /></div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Février 2025</span> · <span>Média</span></div>
+            <h3>Gaspiz sur I JA LE, Guadeloupe La 1ère !</h3>
+            <p>Notre toute première apparition télévisée, dans la rubrique économie de l'émission I JA LE.</p>
+            <span class="blog-card-link">Voir &amp; lire →</span>
+          </div>
+        </a>
+      </div>
+      <p style="text-align: center; margin-top: 2.5rem;"><a href="blog.html" class="btn btn-outline">Voir tous les articles</a></p>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES -->
+  <section class="temoignages" id="temoignages">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-tag">Ils témoignent</p>
+        <h2 class="section-title">Ce qu'ils en pensent</h2>
+        <div class="rating-global">
+          <div class="stars">★★★★★</div>
+          <strong>4,5/5</strong>
+          <span>sur les stores</span>
+        </div>
+      </div>
+      <div class="temoignages-grid">
+        <div class="temoignage reveal">
+          <div class="temo-stars">★★★★★</div>
+          <p>"Idéal pour notre problème de vie chère en Guadeloupe. Je fais des économies tout en luttant contre le gaspillage. Une app géniale !"</p>
+          <div class="temo-author">
+            <img src="https://gaspiz.fr/wp-content/uploads/2025/04/amina.png" alt="Amina" />
+            <div>
+              <strong>Amina</strong>
+              <span>Guadeloupe</span>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage reveal" style="--delay: 0.1s">
+          <div class="temo-stars">★★★★★</div>
+          <p>"J'ai découvert des commerçants locaux que je ne connaissais pas grâce à Gaspiz. L'équipe est super sympa et réactive. Je recommande !"</p>
+          <div class="temo-author">
+            <img src="https://gaspiz.fr/wp-content/uploads/2025/03/yoga-in-the-park-EAYXB2R.jpg" alt="Utilisatrice Gaspiz" />
+            <div>
+              <strong>Marie-Line</strong>
+              <span>Martinique</span>
+            </div>
+          </div>
+        </div>
+        <div class="temoignage reveal" style="--delay: 0.2s">
+          <div class="temo-stars">★★★★★</div>
+          <p>"Application simple et pratique. Les paniers sont toujours une bonne surprise ! Je l'utilise au moins 2 fois par semaine maintenant."</p>
+          <div class="temo-author">
+            <img src="https://gaspiz.fr/wp-content/uploads/2025/04/jean.png" alt="Jean" />
+            <div>
+              <strong>Jean</strong>
+              <span>Guyane</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEAUX SOCIAUX -->
+  <section class="social-section" id="reseaux">
+    <div class="section-container">
+      <div class="section-header reveal" style="margin-bottom: 1rem;">
+        <p class="section-tag">Suivez-nous</p>
+        <h2 class="section-title">Toute l'actu Gaspiz sur vos réseaux</h2>
+      </div>
+      <div class="social-grid">
+        <a href="https://www.instagram.com/gaspiz.fr" target="_blank" rel="noopener" class="social-card reveal">
+          <span class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </span>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.tiktok.com/@gaspiz.fr" target="_blank" rel="noopener" class="social-card reveal" style="--delay: 0.05s">
+          <span class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg>
+          </span>
+          <span>TikTok</span>
+        </a>
+        <a href="https://www.youtube.com/channel/UCU40w-O1qCVlNCVsl5Q4lxQ" target="_blank" rel="noopener" class="social-card reveal" style="--delay: 0.1s">
+          <span class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </span>
+          <span>YouTube</span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61569839091501" target="_blank" rel="noopener" class="social-card reveal" style="--delay: 0.15s">
+          <span class="social-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+          </span>
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-tag">Questions fréquentes</p>
+        <h2 class="section-title">On se dit tout</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>L'application est-elle gratuite ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, l'application est 100% gratuite pour les acheteurs. Les commerçants bénéficient d'un abonnement mensuel pour proposer leurs paniers sur la plateforme.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="--delay: 0.05s">
+          <button class="faq-question" aria-expanded="false">
+            <span>Qu'est-ce qu'un panier surprise ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Un panier surprise est composé d'invendus du jour choisis par le commerçant. Son contenu est inconnu à l'avance, mais les produits respectent toujours les normes sanitaires (aucun article avec une DLC dépassée).</p>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="--delay: 0.1s">
+          <button class="faq-question" aria-expanded="false">
+            <span>Comment se passe le paiement ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Le paiement s'effectue uniquement sur place, directement chez le commerçant. Vous pouvez payer en espèces, par carte bancaire ou avec des tickets-restaurant.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="--delay: 0.15s">
+          <button class="faq-question" aria-expanded="false">
+            <span>Gaspiz prend-il une commission sur les ventes ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Non. Gaspiz ne prend aucune commission sur les ventes des commerçants. Le modèle repose uniquement sur l'abonnement mensuel, ce qui garantit la transparence pour tous.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="--delay: 0.2s">
+          <button class="faq-question" aria-expanded="false">
+            <span>Y a-t-il une livraison ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Non, la livraison n'est pas encore proposée. Vous devez vous rendre directement chez le commerçant aux horaires de retrait indiqués dans l'application.</p>
+          </div>
+        </div>
+        <div class="faq-item reveal" style="--delay: 0.25s">
+          <button class="faq-question" aria-expanded="false">
+            <span>Que se passe-t-il si j'annule ma commande ?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>En cas d'annulation, 2 points Gaspiz sont déduits de votre compte. Ces points représentent votre engagement dans la démarche anti-gaspillage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="cta-blob"></div>
+    <div class="section-container">
+      <div class="cta-content reveal">
+        <p class="section-tag light">Rejoignez le mouvement</p>
+        <h2 class="cta-title">Prêt à changer vos<br />habitudes de consommation ?</h2>
+        <p>Téléchargez Gaspiz gratuitement et commencez à faire des économies dès aujourd'hui.</p>
+        <div class="hero-cta">
+          <a href="https://apps.apple.com/fr/app/gaspiz/id6738059463" target="_blank" rel="noopener" class="store-btn">
+            <img src="app-store.webp" alt="Disponible sur App Store" width="650" height="210" />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.mycompany.gaspiz" target="_blank" rel="noopener" class="store-btn">
+            <img src="play-store.webp" alt="Disponible sur Google Play" width="650" height="209" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="https://gaspiz.fr/wp-content/uploads/2025/04/Gaspiz_avectitre_compress-300x99.png" alt="Logo Gaspiz" />
+        <p>L'application anti-gaspi de référence en Guadeloupe, Martinique et Guyane.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/gaspiz.fr" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@gaspiz.fr" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCU40w-O1qCVlNCVsl5Q4lxQ" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61569839091501" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+            <li><a href="commercants.html">Commerçants</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:nicolas@gaspiz.fr">nicolas@gaspiz.fr</a></li>
+          <li><a href="https://www.instagram.com/gaspiz.fr" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-app">
+        <h4>Télécharger</h4>
+        <a href="https://apps.apple.com/fr/app/gaspiz/id6738059463" target="_blank" rel="noopener">
+          <img src="app-store.webp" alt="App Store" width="650" height="210" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.mycompany.gaspiz" target="_blank" rel="noopener">
+          <img src="play-store.webp" alt="Google Play" width="650" height="209" />
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Gaspiz. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
