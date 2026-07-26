@@ -115,30 +115,56 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// FORMULAIRE DE CONTACT
+// FORMULAIRE DE CONTACT (envoi via Formspree)
+// L'adresse d'envoi est celle de l'attribut action du formulaire, dans
+// contact.html. Sans JavaScript, le navigateur poste directement dessus.
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  const success = document.getElementById('contactSuccess');
+  const errorBox = document.getElementById('contactError');
+  const submitBtn = contactForm.querySelector('.form-submit');
+
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const prenom = document.getElementById('c-prenom').value.trim();
-    const nom = document.getElementById('c-nom').value.trim();
-    const email = document.getElementById('c-email').value.trim();
-    const sujet = document.getElementById('c-sujet').value;
-    const message = document.getElementById('c-message').value.trim();
+    // Le formulaire porte novalidate : on declenche la validation nous-memes
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
 
-    const subject = encodeURIComponent(`[Site Gaspiz] ${sujet} — ${prenom} ${nom}`);
-    const body = encodeURIComponent(
-      `Nom : ${prenom} ${nom}\nEmail : ${email}\nSujet : ${sujet}\n\nMessage :\n${message}`
-    );
+    if (errorBox) errorBox.classList.remove('show');
 
-    window.location.href = `mailto:nicolas@gaspiz.fr?subject=${subject}&body=${body}`;
+    const label = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
+    }
 
-    contactForm.style.display = 'none';
-    const success = document.getElementById('contactSuccess');
-    if (success) {
-      success.classList.add('show');
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!response.ok) throw new Error('Reponse ' + response.status);
+
+      contactForm.style.display = 'none';
+      if (success) {
+        success.classList.add('show');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (err) {
+      // On laisse le formulaire en place pour ne pas perdre la saisie
+      if (errorBox) {
+        errorBox.classList.add('show');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = label;
+      }
     }
   });
 }

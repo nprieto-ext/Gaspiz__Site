@@ -121,24 +121,27 @@
         </div>
 
         <div class="contact-form-box reveal reveal-right">
-          <form id="contactForm" novalidate>
+          <!-- REMPLACER VOTRE_ID_FORMSPREE par l'identifiant du formulaire
+               fourni par Formspree (Settings > Endpoint). C'est le seul
+               endroit a modifier : le script lit cette adresse. -->
+          <form id="contactForm" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="c-prenom">Prénom *</label>
-                <input type="text" id="c-prenom" placeholder="Votre prénom" required />
+                <input type="text" id="c-prenom" name="prenom" autocomplete="given-name" placeholder="Votre prénom" required />
               </div>
               <div class="form-group">
                 <label for="c-nom">Nom *</label>
-                <input type="text" id="c-nom" placeholder="Votre nom" required />
+                <input type="text" id="c-nom" name="nom" autocomplete="family-name" placeholder="Votre nom" required />
               </div>
             </div>
             <div class="form-group">
               <label for="c-email">Email *</label>
-              <input type="email" id="c-email" placeholder="vous@exemple.com" required />
+              <input type="email" id="c-email" name="email" autocomplete="email" placeholder="vous@exemple.com" required />
             </div>
             <div class="form-group">
               <label for="c-sujet">Sujet *</label>
-              <select id="c-sujet" required>
+              <select id="c-sujet" name="sujet" required>
                 <option value="Question générale">Question générale</option>
                 <option value="Devenir commerçant partenaire" data-value="commercant">Devenir commerçant partenaire</option>
                 <option value="Problème avec l'application">Problème avec l'application</option>
@@ -148,15 +151,29 @@
             </div>
             <div class="form-group">
               <label for="c-message">Message *</label>
-              <textarea id="c-message" placeholder="Votre message..." required></textarea>
+              <textarea id="c-message" name="message" placeholder="Votre message..." required></textarea>
             </div>
+
+            <!-- Objet de l'e-mail recu, cote Formspree -->
+            <input type="hidden" name="_subject" value="[Site Gaspiz] Nouveau message depuis le formulaire de contact" />
+
+            <!-- Piege a robots : invisible pour un humain, rempli par les
+                 spambots. Formspree rejette l'envoi si ce champ est rempli. -->
+            <div style="position:absolute;left:-9999px;" aria-hidden="true">
+              <label for="c-website">Ne pas remplir ce champ</label>
+              <input type="text" id="c-website" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </div>
+
             <button type="submit" class="btn btn-primary form-submit">Envoyer le message</button>
-            <p class="form-note">En envoyant ce formulaire, votre messagerie s'ouvrira pour transmettre votre demande à nicolas@gaspiz.fr</p>
+            <p class="form-note">Votre message nous est transmis directement. Réponse sous 48 h à l'adresse que vous indiquez.</p>
           </form>
+          <div class="form-error" id="contactError">
+            <p><strong>L'envoi a échoué.</strong> Vérifiez votre connexion et réessayez, ou écrivez-nous directement à <a href="mailto:nicolas@gaspiz.fr">nicolas@gaspiz.fr</a>.</p>
+          </div>
           <div class="form-success" id="contactSuccess">
             <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="4,13 9,18 20,6" fill="none" stroke="#241E0F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <h3>Merci pour votre message !</h3>
-            <p>Votre messagerie va s'ouvrir pour envoyer votre demande. À très vite !</p>
+            <p>Nous l'avons bien reçu et vous répondrons sous 48 h. À très vite !</p>
           </div>
         </div>
       </div>

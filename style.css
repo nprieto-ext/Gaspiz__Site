@@ -2830,3 +2830,32 @@ button {
 @media (max-width: 860px) {
   .howto-grid { grid-template-columns: 1fr; }
 }
+/* ===== Formulaire : bloc d erreur d envoi ===== */
+.form-error {
+  display: none;
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #FDECE8;
+  border: 1px solid var(--danger);
+  border-left: 4px solid var(--danger);
+  border-radius: var(--radius-sm);
+}
+
+.form-error.show { display: block; }
+
+.form-error p {
+  font-size: 0.9rem;
+  color: var(--dark);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.form-error a {
+  color: var(--danger);
+  text-decoration: underline;
+}
+
+.form-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
