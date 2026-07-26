@@ -8,6 +8,13 @@ RewriteBase /
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# --- Redirections 301 depuis les anciennes URLs WordPress --------------
+# Ces trois URLs étaient indexées par Google. Sans ces règles, elles
+# renverraient 404 et le référencement acquis serait perdu.
+RewriteRule ^telecharger-gaspiz-application-anti-gaspi/?$ /telecharger [R=301,L]
+RewriteRule ^commercants-gaspiz-application-commercants-guadeloupe-martinique-guyane/?$ /commercants [R=301,L]
+RewriteRule ^applicationnondisponible/?$ /telecharger [R=301,L]
+
 # --- URL canonique : /page.html -> /page -------------------------------
 # Le test sur THE_REQUEST ne matche que la requête d'origine du navigateur,
 # jamais une réécriture interne : pas de boucle avec la règle suivante.
