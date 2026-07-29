@@ -2581,6 +2581,25 @@ button {
     transform: translateY(-7px) rotate(-45deg);
   }
 
+  /* Le menu plein ecran est en position: fixed, mais le backdrop-filter de
+     .navbar fait de la barre un bloc conteneur pour ses descendants fixed :
+     l'overlay se retrouve clipe a la hauteur de la barre (~73px) et les liens
+     debordent au-dessus et en dessous. On coupe le flou tant que le menu est
+     ouvert pour que le fixed reprenne bien le viewport comme reference. */
+  body.menu-open .navbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--white);
+    box-shadow: none;
+    border-bottom-color: transparent;
+  }
+
+  /* Le logo doit rester lisible par-dessus l'overlay blanc du menu. */
+  .nav-logo {
+    position: relative;
+    z-index: 1001;
+  }
+
   .hero-container {
     padding: 6.5rem 1.5rem 3.5rem;
     gap: 2rem;

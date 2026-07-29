@@ -15,18 +15,29 @@ const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 
 if (burger && navLinks) {
+  // La classe menu-open sur <body> sert aussi au CSS : elle desactive le
+  // backdrop-filter de la navbar, sans quoi l'overlay fixed est clipe a la
+  // hauteur de la barre (la navbar devient son bloc conteneur).
+  const setMenu = (open) => {
+    burger.classList.toggle('open', open);
+    navLinks.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  setMenu(false);
+
   burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    setMenu(!navLinks.classList.contains('open'));
   });
 
   navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      burger.classList.remove('open');
-      navLinks.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', () => setMenu(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false);
   });
 }
 
