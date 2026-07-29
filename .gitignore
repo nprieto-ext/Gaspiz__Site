@@ -17,6 +17,8 @@ $RECYCLE.BIN/
 *.prproj
 *.mxf
 *.mp4
+# PNG source du visuel hero : seules les variantes WebP sont servies
+imagesite-web.png
 
 # Secrets / config locale
 .env
