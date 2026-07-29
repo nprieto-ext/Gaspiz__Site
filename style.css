@@ -2585,8 +2585,15 @@ button {
      .navbar fait de la barre un bloc conteneur pour ses descendants fixed :
      l'overlay se retrouve clipe a la hauteur de la barre (~73px) et les liens
      debordent au-dessus et en dessous. On coupe le flou tant que le menu est
-     ouvert pour que le fixed reprenne bien le viewport comme reference. */
+     ouvert pour que le fixed reprenne bien le viewport comme reference.
+
+     transition: none est indispensable : .navbar porte transition: 0.3s sans
+     nom de propriete, donc transition-property vaut all et le backdrop-filter
+     s animerait de blur(14px) vers none. Tant qu il n est pas exactement none
+     la barre reste bloc conteneur, et on verrait le menu clipe a 73px pendant
+     300ms avant qu il saute en plein ecran. Le changement doit etre net. */
   body.menu-open .navbar {
+    transition: none;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: var(--white);
