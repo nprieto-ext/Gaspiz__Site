@@ -24,7 +24,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       # En cas d'erreur dans un article, le script s'arrête avec un message
       # explicite : le job échoue et rien n'est publié.
