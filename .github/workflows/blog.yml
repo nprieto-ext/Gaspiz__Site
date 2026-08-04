@@ -1,0 +1,44 @@
+name: Génération du blog
+
+# Se déclenche dès qu'un article est ajouté ou modifié dans content/blog/.
+# Le job régénère les pages HTML, la liste du blog et le sitemap, puis les
+# recommite sur main : Hostinger prend le relais et déploie gaspiz.fr.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Deux pushs rapprochés ne doivent pas régénérer le blog en parallèle.
+concurrency:
+  group: blog-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # En cas d'erreur dans un article, le script s'arrête avec un message
+      # explicite : le job échoue et rien n'est publié.
+      - name: Générer le blog
+        run: node tools/build-blog.js
+
+      - name: Publier les fichiers générés
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Rien à publier, le site est déjà à jour."
+            exit 0
+          fi
+          git config user.name "Gaspiz Bot"
+          git config user.email "actions@github.com"
+          git add blog/ blog.html sitemap.xml
+          git commit -m "Regenere le blog [skip ci]"
+          git push

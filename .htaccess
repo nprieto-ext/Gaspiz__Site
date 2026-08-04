@@ -13,6 +13,13 @@ DirectorySlash Off
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# --- Coulisses du site : jamais servies aux visiteurs -------------------
+# content/ (les articles en Markdown), tools/ (le générateur) et .github/
+# vivent dans le dépôt mais n'ont rien à faire sur le web : sans cette règle
+# Google pourrait indexer le Markdown des articles en double du HTML.
+RewriteRule ^(content|tools)/ - [F,L]
+RewriteRule (^|/)\.(github|git) - [F,L]
+
 # --- Redirections 301 depuis les anciennes URLs WordPress --------------
 # Ces URLs étaient indexées par Google. Sans ces règles, elles
 # renverraient 404 et le référencement acquis serait perdu.

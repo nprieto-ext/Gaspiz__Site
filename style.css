@@ -1812,6 +1812,41 @@ button {
   margin-bottom: 1.25rem;
 }
 
+.article-body h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.article-body ul {
+  margin: 0 0 1.5rem 1.25rem;
+  padding: 0;
+}
+
+.article-body li {
+  font-size: 1.02rem;
+  color: var(--dark);
+  line-height: 1.8;
+  margin-bottom: 0.4rem;
+  padding-left: 0.35rem;
+}
+
+.article-body li::marker {
+  color: var(--yellow);
+  font-size: 1.1em;
+}
+
+/* Image insérée dans le corps d'un article via le bloc :::image */
+.article-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 2rem 0 2.5rem;
+}
+
 .article-body blockquote {
   border-left: 4px solid var(--yellow);
   padding: 0.5rem 0 0.5rem 1.5rem;
