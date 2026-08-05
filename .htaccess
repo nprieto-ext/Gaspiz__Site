@@ -47,7 +47,11 @@ RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
 # --- Page d'erreur -----------------------------------------------------
-ErrorDocument 404 /index.html
+# Une vraie page 404, et non l'accueil : servir index.html ici donnait un
+# « soft 404 », Google voyait du contenu d'accueil valide a des URLs qui
+# n'existent pas et les indexait. 404.html n'utilise que des chemins
+# absolus, elle reste correcte servie depuis /blog/nimportequoi.
+ErrorDocument 404 /404.html
 
 # --- Compression -------------------------------------------------------
 <IfModule mod_deflate.c>
