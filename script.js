@@ -2,6 +2,85 @@
 // GASPIZ — script.js
 // ===========================
 
+// MESURE D'AUDIENCE ET CONSENTEMENT
+// Google Analytics depose des cookies : la loi impose de demander l'accord du
+// visiteur AVANT de le charger. Tant qu'il n'a pas repondu, ou s'il refuse,
+// aucun script Google n'est telecharge et aucun cookie n'est ecrit.
+//
+// Pour activer la mesure : coller ici l'identifiant du flux GA4, de la forme
+// G-XXXXXXXXXX (Google Analytics > Admin > Flux de donnees). Tant que la
+// valeur est vide, le bandeau ne s'affiche pas et rien n'est charge.
+const GA_ID = '';
+
+const CONSENT_CLE = 'gaspiz-cookies';
+const CONSENT_ACCEPTE = 'accepte';
+const CONSENT_REFUSE = 'refuse';
+
+// Le mode navigation privee de certains navigateurs fait echouer localStorage :
+// en cas d'erreur on se comporte comme si le visiteur n'avait pas repondu.
+function lireConsentement() {
+  try { return localStorage.getItem(CONSENT_CLE); } catch (e) { return null; }
+}
+
+function ecrireConsentement(valeur) {
+  try { localStorage.setItem(CONSENT_CLE, valeur); } catch (e) { /* tant pis */ }
+}
+
+function chargerAnalytics() {
+  if (!GA_ID || window.gaspizAnalyticsCharge) return;
+  window.gaspizAnalyticsCharge = true;
+
+  const tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(tag);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  // anonymize_ip : Google tronque l'adresse IP avant de l'enregistrer
+  gtag('config', GA_ID, { anonymize_ip: true });
+}
+
+function afficherBandeauCookies() {
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', 'Consentement aux cookies de mesure');
+  banner.innerHTML =
+    '<h4>On peut compter les visites ?</h4>' +
+    '<p>Gaspiz utilise Google Analytics pour savoir combien de personnes ' +
+    'consultent le site et quelles pages les intéressent. Aucune donnée ' +
+    'n\'est revendue. Vous pouvez refuser, le site fonctionnera pareil. ' +
+    '<a href="/confidentialite">En savoir plus</a>.</p>' +
+    '<div class="cookie-actions">' +
+    '<button type="button" class="btn btn-dark" data-cookie="accepte">Accepter</button>' +
+    '<button type="button" class="btn btn-outline" data-cookie="refuse">Refuser</button>' +
+    '</div>';
+
+  banner.querySelectorAll('[data-cookie]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const choix = btn.dataset.cookie === 'accepte' ? CONSENT_ACCEPTE : CONSENT_REFUSE;
+      ecrireConsentement(choix);
+      banner.remove();
+      if (choix === CONSENT_ACCEPTE) chargerAnalytics();
+    });
+  });
+
+  document.body.appendChild(banner);
+  requestAnimationFrame(() => banner.classList.add('show'));
+}
+
+if (GA_ID) {
+  const consentement = lireConsentement();
+  if (consentement === CONSENT_ACCEPTE) {
+    chargerAnalytics();
+  } else if (consentement !== CONSENT_REFUSE) {
+    afficherBandeauCookies();
+  }
+}
+
 // NAV SCROLL
 const navbar = document.getElementById('navbar');
 if (navbar) {

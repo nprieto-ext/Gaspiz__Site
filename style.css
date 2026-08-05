@@ -2920,3 +2920,75 @@ button {
   opacity: 0.65;
   cursor: not-allowed;
 }
+
+/* ===========================
+   BANDEAU COOKIES
+   Affiche uniquement tant que le visiteur n'a pas choisi, et seulement si
+   un identifiant de mesure est configure dans script.js.
+   =========================== */
+
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2000;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  /* Cache par defaut : le JS retire l'attribut hidden quand il faut demander */
+  display: none;
+}
+
+.cookie-banner.show {
+  display: block;
+  animation: cookieUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes cookieUp {
+  from { opacity: 0; transform: translateY(1rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cookie-banner h4 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--dark);
+  margin: 0 0 0.5rem;
+}
+
+.cookie-banner p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--grey);
+  margin: 0 0 1.25rem;
+}
+
+.cookie-banner a {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cookie-actions .btn {
+  flex: 1 1 auto;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .cookie-actions .btn { flex-basis: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-banner.show { animation: none; }
+}
