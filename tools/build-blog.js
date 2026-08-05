@@ -545,8 +545,8 @@ ${corpsHtml(a.corps, a.fichier)}${signature}
     <div class="footer-bottom">
       <p>© 2026 Gaspiz. Tous droits réservés.</p>
       <div class="footer-legal">
-        <a href="#">Mentions légales</a>
-        <a href="#">Politique de confidentialité</a>
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../confidentialite.html">Politique de confidentialité</a>
       </div>
     </div>
   </footer>
@@ -608,6 +608,10 @@ const PAGES_FIXES = [
   { loc: '/telecharger', changefreq: 'monthly', priority: '0.8' },
   { loc: '/applicationnondisponible', changefreq: 'monthly', priority: '0.7' },
   { loc: '/contact', changefreq: 'monthly', priority: '0.6' },
+  // Pages legales : priorite basse, elles n'ont pas a se positionner, mais
+  // Google verifie leur existence pour juger du serieux du site.
+  { loc: '/mentions-legales', changefreq: 'yearly', priority: '0.2' },
+  { loc: '/confidentialite', changefreq: 'yearly', priority: '0.2' },
 ];
 
 function majSitemap(articles) {

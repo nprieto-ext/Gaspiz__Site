@@ -114,13 +114,36 @@ tous les `.html` de la racine, sinon les visiteurs gardent l'ancienne version en
 cache. Le générateur lit la valeur dans `index.html` et l'applique aux articles,
 il n'y a donc rien à changer dans `blog/`.
 
+Si la date du jour est déjà celle en production, suffixer avec une lettre
+(`20260805b`) : réutiliser une valeur déjà servie laisserait les visiteurs du
+jour sur l'ancien fichier.
+
 ## Le reste du site
 
 Les autres pages (`index.html`, `commercants.html`, `contact.html`,
-`telecharger.html`, `applicationnondisponible.html`) sont écrites à la main.
-Nav et footer y sont dupliqués : une modification doit être répercutée partout,
-y compris dans le gabarit d'article de `tools/build-blog.js`.
+`telecharger.html`, `applicationnondisponible.html`, `mentions-legales.html`,
+`confidentialite.html`, `404.html`) sont écrites à la main. Nav et footer y sont
+dupliqués : une modification doit être répercutée partout, y compris dans le
+gabarit d'article de `tools/build-blog.js`.
+
+**`404.html` n'utilise que des chemins absolus** (`/style.css`, `/img/…`) :
+Apache la sert pour n'importe quelle URL inexistante, y compris sous `/blog/`,
+où des chemins relatifs pointeraient à côté. Ne pas les repasser en relatif.
+
+Les pages fixes du sitemap sont listées dans `PAGES_FIXES`, en haut de la
+partie sitemap de `tools/build-blog.js` : y ajouter toute nouvelle page.
 
 `.htaccess` gère les URLs propres (`/blog` sert `blog.html`), les redirections
-depuis les anciennes URLs WordPress, et bloque `content/` et `tools/` côté web.
-Le formulaire de contact passe par Formspree.
+depuis les anciennes URLs WordPress, la page 404 et bloque `content/` et
+`tools/` côté web. Le formulaire de contact passe par Formspree.
+
+## Mesure d'audience
+
+`script.js` contient un bandeau de consentement et le chargement de Google
+Analytics. Rien ne se déclenche tant que la constante **`GA_ID`** en haut du
+fichier est vide : ni bandeau, ni script Google, ni cookie. Y coller
+l'identifiant de flux GA4 (`G-XXXXXXXXXX`) pour activer la mesure.
+
+Ne jamais charger Analytics en dehors de ce mécanisme : le consentement
+préalable est une obligation légale, et la politique de confidentialité décrit
+ce fonctionnement.

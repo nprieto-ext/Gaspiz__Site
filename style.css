@@ -2215,6 +2215,13 @@ button {
   text-align: center;
 }
 
+/* Sans cette regle le lien serait invisible : le style global des liens est
+   color: inherit sans soulignement, donc identique au texte gris autour. */
+.form-note a {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
 .form-success {
   display: none;
   text-align: center;
