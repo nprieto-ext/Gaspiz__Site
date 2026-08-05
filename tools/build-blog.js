@@ -393,7 +393,7 @@ function pageArticle(a, v) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
-  <title>${esc(a.titre)} — Blog Gaspiz</title>
+  <title>${esc(a.titre)} | Blog Gaspiz</title>
   <meta name="description" content="${escAttr(a.description)}" />
   <meta name="author" content="Gaspiz" />
   <meta name="robots" content="index, follow" />
