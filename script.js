@@ -41,6 +41,32 @@ if (burger && navLinks) {
   });
 }
 
+// BOUTON TELECHARGER : RACCOURCI VERS LE BON STORE
+// Sur mobile, le bouton de la nav envoie directement sur l'App Store ou le
+// Play Store. Sur ordinateur il garde son lien vers telecharger.html, qui
+// presente les deux stores et la version web.
+const APP_STORE_URL = 'https://apps.apple.com/fr/app/gaspiz/id6738059463';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.mycompany.gaspiz';
+
+function storeUrlForDevice() {
+  const ua = navigator.userAgent || '';
+  // Les iPad recents s'annoncent comme des Mac : on les reconnait au tactile
+  const isIOS = /iPad|iPhone|iPod/.test(ua) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) return APP_STORE_URL;
+  if (/Android/.test(ua)) return PLAY_STORE_URL;
+  return null;
+}
+
+const storeUrl = storeUrlForDevice();
+if (storeUrl) {
+  document.querySelectorAll('.nav-cta').forEach(cta => {
+    cta.href = storeUrl;
+    cta.target = '_blank';
+    cta.rel = 'noopener';
+  });
+}
+
 // ACTIVE NAV LINK SELON LA PAGE
 const currentPage = (window.location.pathname.split('/').pop() || 'index.html');
 document.querySelectorAll('.nav-links a[href]').forEach(link => {
