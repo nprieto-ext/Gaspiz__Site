@@ -120,8 +120,9 @@ function parseFrontMatter(raw, fichier) {
 function inline(texte) {
   let t = esc(texte);
   t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, label, url) => {
+    const speciale = /^(https?:|mailto:|tel:)/.test(url);
     const externe = /^https?:/.test(url);
-    const href = escAttr(externe ? url : asset(url));
+    const href = escAttr(speciale ? url : asset(url));
     const attrs = externe ? ' target="_blank" rel="noopener"' : '';
     return `<a href="${href}"${attrs}>${label}</a>`;
   });
