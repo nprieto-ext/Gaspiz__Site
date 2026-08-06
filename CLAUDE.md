@@ -70,6 +70,7 @@ Champs **obligatoires** : `titre`, `date` (format `AAAA-MM-JJ`), `description`.
 | `image_alt`, `image_largeur`, `image_dim` | réglages de cette image | `titre`, `65%`, aucune |
 | `image_entete` | grande image sous le titre de l'article | aucune |
 | `image_entete_alt`, `image_entete_largeur`, `image_entete_dim` | réglages de cette image | `titre`, `280px`, aucune |
+| `image_entete_credit` | crédit photo affiché sous l'image d'en-tête (`© <valeur>`) | aucun, pas de crédit affiché |
 | `lien` | libellé du lien sur la carte | `Lire l'article →` |
 | `slug` | force l'URL au lieu de la déduire du nom de fichier | nom de fichier sans la date |
 | `mois` | force le libellé de date affiché | déduit de `date` |
@@ -94,8 +95,10 @@ Quatre blocs spéciaux, chacun seul sur sa ligne, valeurs entre guillemets :
 
 :::audio fichier="audio/interview.mp3" titre="Interview Gaspiz" sous_titre="Août 2026 · Écoutez l'enregistrement"
 
-:::image fichier="img/2026-08-photo.webp" alt="Description de la photo"
+:::image fichier="img/2026-08-photo.webp" alt="Description de la photo" credit="Gaspiz"
 ```
+
+`credit` est facultatif : s'il est présent, un petit crédit `© <valeur>` s'affiche sous la photo.
 
 `:::video` récupère la vignette YouTube automatiquement.
 

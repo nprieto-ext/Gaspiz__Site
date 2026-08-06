@@ -200,7 +200,12 @@ const BLOCS = {
 
   image(a, fichier) {
     if (!a.fichier) throw new Error(`${fichier} : bloc :::image, fichier="…" manquant.`);
-    return `        <img src="${escAttr(asset(a.fichier))}" alt="${escAttr(a.alt || '')}" loading="lazy" class="article-image" />`;
+    const legende = a.credit
+      ? `\n          <figcaption class="photo-credit">© ${esc(a.credit)}</figcaption>`
+      : '';
+    return `        <figure class="article-image">
+          <img src="${escAttr(asset(a.fichier))}" alt="${escAttr(a.alt || '')}" loading="lazy" />${legende}
+        </figure>`;
   },
 };
 
@@ -341,6 +346,7 @@ function chargerArticles() {
       image_entete_alt: meta.image_entete_alt || meta.titre,
       image_entete_largeur: meta.image_entete_largeur || '280px',
       image_entete_dim: meta.image_entete_dim || '',
+      image_entete_credit: meta.image_entete_credit || '',
       lien: meta.lien || "Lire l'article →",
       signature: meta.signature === 'non' ? null : (meta.signature || "L'équipe Gaspiz"),
       corps,
@@ -377,8 +383,11 @@ function pageArticle(a, v) {
     publisher: { '@type': 'Organization', name: 'Gaspiz' },
   }, null, 2).split('\n').map((l) => '  ' + l).join('\n');
 
+  const imageEnteteCredit = a.image_entete_credit
+    ? `\n      <p class="photo-credit" style="max-width: ${escAttr(a.image_entete_largeur)}; margin: 0.4rem auto 0;">© ${esc(a.image_entete_credit)}</p>`
+    : '';
   const imageEntete = a.image_entete
-    ? `\n      <img src="${escAttr(asset(a.image_entete))}" alt="${escAttr(a.image_entete_alt)}" style="max-width: ${escAttr(a.image_entete_largeur)}; width: 100%; margin: 2rem auto 0; border-radius: var(--radius); box-shadow: var(--shadow); display: block;"${dimensions(a.image_entete_dim)} />`
+    ? `\n      <img src="${escAttr(asset(a.image_entete))}" alt="${escAttr(a.image_entete_alt)}" style="max-width: ${escAttr(a.image_entete_largeur)}; width: 100%; margin: 2rem auto 0; border-radius: var(--radius); box-shadow: var(--shadow); display: block;"${dimensions(a.image_entete_dim)} />${imageEnteteCredit}`
     : '';
 
   const signature = a.signature

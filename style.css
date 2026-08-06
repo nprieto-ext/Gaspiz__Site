@@ -1842,10 +1842,23 @@ button {
   display: block;
   width: 100%;
   max-width: 440px;
+  margin: 2rem auto 2.5rem;
+}
+
+.article-image img {
+  display: block;
+  width: 100%;
   height: auto;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  margin: 2rem auto 2.5rem;
+}
+
+/* Crédit photo, sous une image d'article (bloc :::image ou image d'en-tête) */
+.photo-credit {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--grey);
+  margin-top: 0.4rem;
 }
 
 .article-body blockquote {
