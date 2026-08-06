@@ -5,9 +5,9 @@ categorie: Recrutement
 emoji: 🌴
 description: Gaspiz recrute des apporteurs d'affaires indépendants aux Antilles-Guyane pour développer son réseau de commerçants partenaires. Rémunération à la commission.
 chapeau: "Guadeloupe, Martinique, Guyane, Saint-Martin, Saint-Barth : on recrute partout !"
-image: img/2026-08-apporteur-affaires-antilles.webp
-image_alt: Les Antilles vues du ciel, territoire de recrutement des apporteurs d'affaires Gaspiz
-image_dim: 900x578
+image: img/2026-08-apporteur-affaires-telephone-vignette.webp
+image_alt: Apporteure d'affaires Gaspiz au téléphone avec un commerçant
+image_dim: 577x432
 image_entete: img/2026-08-apporteur-affaires-telephone.webp
 image_entete_alt: Apporteur d'affaires Gaspiz au téléphone avec un commerçant
 image_entete_dim: 577x1024
