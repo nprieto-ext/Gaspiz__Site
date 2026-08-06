@@ -5,6 +5,12 @@ categorie: Recrutement
 emoji: 🌴
 description: Gaspiz recrute des apporteurs d'affaires indépendants aux Antilles-Guyane pour développer son réseau de commerçants partenaires. Rémunération à la commission.
 chapeau: "Guadeloupe, Martinique, Guyane, Saint-Martin, Saint-Barth : on recrute partout !"
+image: img/2026-08-apporteur-affaires-antilles.webp
+image_alt: Les Antilles vues du ciel, territoire de recrutement des apporteurs d'affaires Gaspiz
+image_dim: 900x578
+image_entete: img/2026-08-apporteur-affaires-telephone.webp
+image_entete_alt: Apporteur d'affaires Gaspiz au téléphone avec un commerçant
+image_entete_dim: 577x1024
 ---
 
 Arrondir ses fins de mois tout en faisant quelque chose d'utile, c'est possible ?
@@ -19,7 +25,11 @@ Que tu sois en Guadeloupe, en Martinique, en Guyane française, à Saint-Martin 
 
 Gaspiz c'est l'appli anti gaspi des Antilles-Guyane. Concrètement, elle connecte des commerçants locaux (boulangeries, restaurants, épiceries, traiteurs) avec des consommateurs qui achètent leurs invendus sous forme de paniers surprise, 2 à 3 fois moins chers que le prix normal.
 
+:::image fichier="img/2026-08-apporteur-affaires-appli.webp" alt="Aperçu de l'application Gaspiz"
+
 Résultat ? Les commerçants déstockent sans perdre, les consommateurs mangent bien sans se ruiner, et on évite des tonnes de gaspillage alimentaire sur nos territoires.
+
+:::image fichier="img/2026-08-apporteur-affaires-panier.webp" alt="Panier surprise Gaspiz rempli d'invendus"
 
 Aux Antilles-Guyane, la vie chère est une réalité quotidienne. Les prix des produits alimentaires sont en moyenne 30 à 40% plus élevés qu'en France hexagonale. Gaspiz apporte une réponse concrète à ce problème, et c'est exactement pourquoi le projet prend autant d'ampleur sur nos îles.
 
@@ -42,6 +52,8 @@ Pas besoin d'être commercial de métier. Tu as juste besoin d'être à l'aise p
 - Tu leur présentes Gaspiz et les avantages concrets de la plateforme
 - Tu les accompagnes jusqu'à leur inscription
 - Et tu touches un pourcentage sur chaque forfait vendu 💰
+
+:::image fichier="img/2026-08-apporteur-affaires-commercant.webp" alt="Apporteur d'affaires Gaspiz échangeant avec un commerçant partenaire"
 
 Le gros avantage ? Tu travailles à ton rythme, depuis ton territoire, avec les commerçants que tu connais déjà ou que tu croises au quotidien. Pas de patron, pas d'horaires imposés, pas de quota à atteindre.
 
