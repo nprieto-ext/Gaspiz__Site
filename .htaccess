@@ -28,6 +28,12 @@ RewriteRule (^|/)\.(github|git) - [F,L]
 RewriteRule ^telecharger-gaspiz-application-anti-gaspi/?$ /telecharger [R=301,L]
 RewriteRule ^commercants-gaspiz-application-commercants-guadeloupe-martinique-guyane/?$ /commercants [R=301,L]
 
+# --- Politique de confidentialité : URL déclarée à Google Play ---------
+# La fiche Play Console pointe vers /privacy-policy/, une URL de l'époque
+# WordPress. Sans ces règles elle renvoie 404 et Google refuse la fiche.
+RewriteRule ^privacy-policy/?$ /confidentialite [R=301,L]
+RewriteRule ^politique-de-confidentialite/?$ /confidentialite [R=301,L]
+
 # --- Slash final retiré ------------------------------------------------
 # WordPress servait toutes ses URLs avec un slash final. On les ramène
 # vers la forme sans slash, qui est la forme canonique du nouveau site.
