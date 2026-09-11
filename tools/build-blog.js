@@ -557,6 +557,8 @@ ${corpsHtml(a.corps, a.fichier)}${signature}
       <div class="footer-legal">
         <a href="../mentions-legales.html">Mentions légales</a>
         <a href="../confidentialite.html">Politique de confidentialité</a>
+        <a href="../cgu.html">CGU</a>
+        <a href="../cgv-commercants.html">CGV commerçants</a>
       </div>
     </div>
   </footer>
@@ -622,6 +624,8 @@ const PAGES_FIXES = [
   // Google verifie leur existence pour juger du serieux du site.
   { loc: '/mentions-legales', changefreq: 'yearly', priority: '0.2' },
   { loc: '/confidentialite', changefreq: 'yearly', priority: '0.2' },
+  { loc: '/cgu', changefreq: 'yearly', priority: '0.2' },
+  { loc: '/cgv-commercants', changefreq: 'yearly', priority: '0.2' },
 ];
 
 function majSitemap(articles) {

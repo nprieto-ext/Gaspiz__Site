@@ -6,14 +6,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
   <title>Politique de confidentialité | Gaspiz</title>
-  <meta name="description" content="Quelles données le site gaspiz.fr collecte, pourquoi, combien de temps elles sont conservées et comment exercer vos droits." />
+  <meta name="description" content="Quelles données l'application Gaspiz et le site gaspiz.fr collectent, pourquoi, combien de temps elles sont conservées et comment exercer vos droits." />
   <meta name="author" content="Gaspiz" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://gaspiz.fr/confidentialite" />
 
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Politique de confidentialité | Gaspiz" />
-  <meta property="og:description" content="Quelles données le site gaspiz.fr collecte, et comment exercer vos droits." />
+  <meta property="og:description" content="Quelles données l'application Gaspiz et le site gaspiz.fr collectent, et comment exercer vos droits." />
   <meta property="og:url" content="https://gaspiz.fr/confidentialite" />
   <meta property="og:site_name" content="Gaspiz" />
   <meta property="og:locale" content="fr_FR" />
@@ -22,7 +22,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=20260806b" />
+  <link rel="stylesheet" href="style.css?v=20260911" />
+
+  <!-- Ouverte depuis l'application avec ?app=1 : navigation et pied de page
+       masqués, ils n'ont pas de sens dans la vue intégrée à l'appli. -->
+  <script>if (/[?&]app=1(&|$)/.test(location.search)) document.documentElement.classList.add('in-app');</script>
+  <style>
+    .in-app .navbar, .in-app .footer, .in-app .breadcrumb, .in-app .page-hero-blob { display: none; }
+    .in-app .page-hero { padding-top: 2.5rem; padding-bottom: 1.5rem; }
+    .in-app .article-body { padding-top: 2rem; }
+  </style>
 </head>
 <body>
 
@@ -52,7 +61,7 @@
     <div class="page-hero-content reveal">
       <div class="breadcrumb"><a href="index.html">Accueil</a> / Politique de confidentialité</div>
       <h1 class="page-hero-title">Politique de confidentialité</h1>
-      <p class="page-hero-desc">Ce que le site gaspiz.fr collecte, pourquoi, pendant combien de temps, et comment reprendre la main sur vos données.</p>
+      <p class="page-hero-desc">Ce que l'application Gaspiz et le site gaspiz.fr collectent, pourquoi, pendant combien de temps, et comment reprendre la main sur vos données.</p>
     </div>
   </section>
 
@@ -62,30 +71,212 @@
       <div class="article-wrap">
 
         <p style="font-weight: 700;">
-          En résumé : le site ne vous demande rien pour être consulté. Si vous
-          nous écrivez, nous gardons votre message le temps d'y répondre. La
-          mesure d'audience ne se déclenche qu'avec votre accord, et rien n'est
-          jamais revendu.
+          En résumé : nous collectons ce qu'il faut pour que vous puissiez
+          réserver et récupérer vos paniers, rien de plus. Aucun paiement ni
+          aucune donnée bancaire des clients ne passe par Gaspiz, votre position
+          reste sur votre téléphone, et rien n'est jamais revendu.
         </p>
 
-        <h2>Qui est responsable de vos données</h2>
+        <h2 id="responsable">Qui est responsable de vos données</h2>
         <p>
           Le responsable du traitement est Nicolas Prieto Blanco, entrepreneur
-          individuel, Rue Owel Solvet, 97180 Sainte-Anne, Guadeloupe
-          (SIRET 801 334 095 00032). Pour toute question relative à vos données :
+          individuel exerçant sous le nom commercial Gaspiz, Rue Owel Solvet,
+          97180 Sainte-Anne, Guadeloupe (SIRET 801 334 095 00032). Pour toute
+          question relative à vos données :
           <a href="mailto:megane@gaspiz.fr">megane@gaspiz.fr</a>.
         </p>
 
-        <h2>Le périmètre de cette politique</h2>
+        <h2 id="perimetre">Le périmètre de cette politique</h2>
         <p>
-          Cette politique porte sur le <strong>site gaspiz.fr</strong> que vous
-          consultez actuellement. L'application mobile Gaspiz, où vous créez un
-          compte et réservez des paniers, repose sur des traitements distincts :
-          ils sont décrits dans les conditions présentées lors de la création de
-          votre compte dans l'application.
+          Cette politique couvre l'<strong>application mobile Gaspiz</strong>,
+          pour les clients comme pour les commerçants partenaires, et le
+          <strong>site gaspiz.fr</strong>. Les règles d'utilisation de
+          l'application figurent dans les <a href="cgu.html">conditions générales
+          d'utilisation</a> et les <a href="cgv-commercants.html">conditions
+          générales de vente commerçants</a>.
         </p>
 
-        <h2>Le formulaire de contact</h2>
+        <h2 id="clients">Dans l'application, si vous êtes client</h2>
+
+        <h3>Les données que nous utilisons</h3>
+        <ul>
+          <li>
+            <strong>Votre compte :</strong> adresse email et mot de passe, ou
+            l'identifiant de votre compte Google ou Apple si vous choisissez ce
+            mode de connexion. Le mot de passe est géré par notre hébergeur et
+            nous est illisible.
+          </li>
+          <li>
+            <strong>Votre profil :</strong> nom, prénom, téléphone, photo si vous
+            en ajoutez une, territoire et ville.
+          </li>
+          <li>
+            <strong>Vos préférences alimentaires</strong>, si vous choisissez de
+            les indiquer : sans porc, végétarien, sans gluten, sans lactose.
+          </li>
+          <li>
+            <strong>Votre activité :</strong> boutiques favorites, commandes
+            (panier, commerçant, date, prix, statut), points Gaspiz et
+            avertissements, économies réalisées, code promo utilisé, notes et
+            avis.
+          </li>
+          <li>
+            <strong>Pour une livraison :</strong> adresse, commune et créneau
+            souhaité.
+          </li>
+          <li>
+            <strong>Pour les notifications :</strong> un identifiant technique de
+            votre appareil, si vous les acceptez.
+          </li>
+          <li>
+            <strong>Vos demandes d'aide :</strong> déblocage de compte, email de
+            validation non reçu.
+          </li>
+        </ul>
+
+        <h3>Votre position</h3>
+        <p>
+          Si vous activez la localisation, votre position sert uniquement à
+          afficher la distance qui vous sépare des commerçants. Elle est calculée
+          et conservée sur votre téléphone : elle n'est pas envoyée à Gaspiz.
+          Vous pouvez la désactiver à tout moment dans votre profil ou dans les
+          réglages de votre téléphone.
+        </p>
+
+        <h3>Pourquoi, et sur quelle base</h3>
+        <ul>
+          <li>
+            <strong>Gérer votre compte et vos réservations</strong>, transmettre
+            votre commande au commerçant, faire fonctionner les points Gaspiz,
+            organiser une livraison, vous envoyer les emails et notifications liés
+            à vos commandes : c'est nécessaire à l'exécution des
+            <a href="cgu.html">CGU</a> que vous avez acceptées.
+          </li>
+          <li>
+            <strong>Vos préférences alimentaires</strong> servent à vous proposer
+            des paniers adaptés. Elles reposent sur votre consentement : vous les
+            cochez vous-même et pouvez les retirer à tout moment dans votre profil.
+          </li>
+          <li>
+            <strong>Vous donner des nouvelles de Gaspiz</strong> par email
+            (nouveaux commerçants, nouveautés de l'application) : c'est notre
+            intérêt légitime à informer les utilisateurs du service. Vous pouvez
+            vous y opposer à tout moment, en nous écrivant ou avec le lien de
+            désinscription présent dans chaque email.
+          </li>
+          <li>
+            <strong>Modérer les avis, limiter les réservations non honorées,
+            sécuriser l'application</strong> et en mesurer le bon fonctionnement :
+            c'est notre intérêt légitime à offrir un service fiable aux clients
+            comme aux commerçants.
+          </li>
+        </ul>
+
+        <h3>Qui les voit</h3>
+        <ul>
+          <li>
+            <strong>Le commerçant chez qui vous réservez</strong> : vos nom,
+            prénom et email, le détail de votre commande et vos points Gaspiz,
+            pour vous remettre votre panier. Il lui est interdit de s'en servir à
+            d'autres fins.
+          </li>
+          <li>
+            <strong>La personne chargée d'une livraison</strong> : vos nom,
+            prénom, téléphone et adresse de livraison.
+          </li>
+          <li><strong>L'équipe Gaspiz</strong>, pour gérer le service et vous aider.</li>
+          <li>
+            <strong>Nos prestataires techniques</strong>, décrits plus bas, qui
+            agissent pour notre compte.
+          </li>
+        </ul>
+        <p>
+          Vos notes et avis sont publics : ils apparaissent sur la fiche du
+          commerçant concerné.
+        </p>
+
+        <h2 id="commercants">Dans l'application, si vous êtes commerçant</h2>
+        <ul>
+          <li>
+            <strong>Les données :</strong> nom, prénom, email et téléphone du
+            responsable ; raison sociale, adresse et position de la boutique,
+            horaires, moyens de paiement acceptés, logo, photos, vidéo et
+            présentation ; formule souscrite, factures et identifiant client
+            Stripe ; date et signataire de l'acceptation des CGV ; statistiques de
+            ventes. Si vous nous avez contactés via le formulaire d'inscription
+            commerçant, les coordonnées que vous y avez saisies.
+          </li>
+          <li>
+            <strong>Pourquoi :</strong> exécuter le contrat (publier vos paniers,
+            vous facturer, vous accompagner), respecter nos obligations
+            comptables et, pour les candidatures, vous recontacter.
+          </li>
+          <li>
+            <strong>Ce qui est public :</strong> le nom, l'adresse, les photos,
+            les horaires et les notes de votre boutique, qui sont faits pour être
+            vus des clients.
+          </li>
+        </ul>
+
+        <h2 id="prestataires">Nos prestataires</h2>
+        <p>
+          Nous faisons appel à des prestataires qui traitent certaines données
+          pour notre compte, sans pouvoir les utiliser à leurs propres fins :
+        </p>
+        <ul>
+          <li>
+            <strong>Google (Firebase)</strong> : hébergement de la base de données
+            et des photos, authentification, envoi des notifications, mesure des
+            performances de l'application. Google fournit aussi les cartes et la
+            recherche d'adresses.
+          </li>
+          <li><strong>Algolia</strong> : moteur de recherche de l'application.</li>
+          <li><strong>Mapbox</strong> : affichage du plan de situation des boutiques.</li>
+          <li><strong>Make</strong> : automatisation des emails envoyés par l'application, sur des serveurs situés dans l'Union européenne.</li>
+          <li><strong>Stripe</strong> : paiement des abonnements et des packs des commerçants.</li>
+          <li><strong>Slack</strong> : messagerie interne de l'équipe, qui reçoit les demandes de livraison.</li>
+          <li><strong>Formspree</strong> : acheminement du formulaire de contact du site.</li>
+          <li>Nos prestataires d'envoi d'emails, pour la lettre d'information.</li>
+        </ul>
+        <p>
+          Certains de ces prestataires sont établis aux États-Unis. Ces
+          transferts sont encadrés par les garanties prévues par le RGPD : la
+          décision d'adéquation de la Commission européenne (Data Privacy
+          Framework) ou ses clauses contractuelles types.
+        </p>
+
+        <h2 id="duree">Combien de temps nous les gardons</h2>
+        <ul>
+          <li>
+            <strong>Compte client :</strong> tant que vous l'utilisez. Il est
+            supprimé sous 48 heures lorsque vous le demandez depuis votre profil,
+            et automatiquement après 3 ans sans activité.
+          </li>
+          <li>
+            <strong>Commandes :</strong> 3 ans après la commande, pour répondre à
+            une éventuelle réclamation, puis supprimées ou rendues anonymes.
+          </li>
+          <li><strong>Demandes de livraison :</strong> 3 mois.</li>
+          <li>
+            <strong>Commerçants :</strong> pendant toute la durée du contrat, puis
+            3 ans. Les factures et pièces comptables sont conservées 10 ans, comme
+            l'impose le code de commerce.
+          </li>
+          <li><strong>Candidatures commerçants :</strong> 3 ans après le dernier échange.</li>
+          <li><strong>Messages du formulaire de contact :</strong> 12 mois après notre dernier échange.</li>
+        </ul>
+
+        <h2 id="securite">Sécurité</h2>
+        <p>
+          L'accès à la base de données est protégé par authentification et par
+          des règles qui limitent ce que chaque compte peut lire et modifier.
+          Gaspiz ne collecte aucune donnée bancaire de ses clients : les paniers
+          se paient sur place, chez le commerçant.
+        </p>
+
+        <h2 id="site">Sur le site gaspiz.fr</h2>
+
+        <h3>Le formulaire de contact</h3>
         <p>
           Quand vous utilisez notre <a href="contact.html">page contact</a>, nous
           recevons les informations que vous avez saisies : prénom, nom, adresse
@@ -106,7 +297,7 @@
           pour éviter ce passage.
         </p>
 
-        <h2>La mesure d'audience</h2>
+        <h3>La mesure d'audience</h3>
         <p>
           Nous cherchons à savoir combien de personnes consultent le site et
           quelles pages les intéressent, pour l'améliorer. Cette mesure repose
@@ -127,7 +318,7 @@
           prochaine visite.
         </p>
 
-        <h2>Les polices de caractères et les vidéos</h2>
+        <h3>Les polices de caractères et les vidéos</h3>
         <p>
           Deux éléments extérieurs se chargent sur le site, sans cookie mais en
           recevant votre adresse IP, ce qui est techniquement inévitable dès
@@ -145,7 +336,7 @@
           </li>
         </ul>
 
-        <h2>Les cookies utilisés</h2>
+        <h3>Les cookies utilisés</h3>
         <ul>
           <li>
             <strong>Votre choix de consentement</strong> — enregistré localement
@@ -163,7 +354,7 @@
           reciblage.
         </p>
 
-        <h2>Ce que nous ne faisons pas</h2>
+        <h2 id="ne-faisons-pas">Ce que nous ne faisons pas</h2>
         <p>
           Nous ne vendons, ne louons et n'échangeons vos données avec personne.
           Nous ne constituons pas de profil publicitaire. Nous ne vous inscrivons
@@ -171,15 +362,18 @@
           formulaire de contact.
         </p>
 
-        <h2>Vos droits</h2>
+        <h2 id="droits">Vos droits</h2>
         <p>
           Le règlement général sur la protection des données vous donne le droit
           d'accéder aux données que nous détenons sur vous, de les faire
           rectifier, de demander leur effacement, d'en obtenir une copie, de
-          limiter leur traitement ou de vous y opposer.
+          limiter leur traitement ou de vous y opposer, et de retirer à tout
+          moment un consentement donné. Vous pouvez aussi définir des directives
+          sur le sort de vos données après votre décès.
         </p>
         <p>
-          Pour exercer l'un de ces droits, écrivez à
+          Dans l'application, vous pouvez modifier votre profil et supprimer
+          votre compte vous-même. Pour exercer tout autre droit, écrivez à
           <a href="mailto:megane@gaspiz.fr">megane@gaspiz.fr</a>. Nous répondons
           dans un délai d'un mois. Une preuve d'identité peut vous être demandée
           si un doute subsiste sur l'auteur de la demande.
@@ -191,14 +385,14 @@
           plainte sur <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>.
         </p>
 
-        <h2>Modifications</h2>
+        <h2 id="modifications">Modifications</h2>
         <p>
-          Cette politique peut évoluer si le site change. La date ci-dessous
-          indique la version en vigueur. En cas de modification substantielle,
-          l'information sera portée à votre connaissance sur le site.
+          Cette politique peut évoluer avec l'application ou le site. La date
+          ci-dessous indique la version en vigueur. En cas de modification
+          substantielle, vous en serez informé dans l'application ou sur le site.
         </p>
 
-        <p style="font-weight: 700;">Dernière mise à jour : 5 août 2026.</p>
+        <p style="font-weight: 700;">Dernière mise à jour : 11 septembre 2026.</p>
 
       </div>
     </div>
@@ -255,10 +449,12 @@
       <div class="footer-legal">
         <a href="mentions-legales.html">Mentions légales</a>
         <a href="confidentialite.html">Politique de confidentialité</a>
+        <a href="cgu.html">CGU</a>
+        <a href="cgv-commercants.html">CGV commerçants</a>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=20260806b"></script>
+  <script src="script.js?v=20260911"></script>
 </body>
 </html>
