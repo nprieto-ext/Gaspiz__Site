@@ -134,9 +134,15 @@
                 <input type="text" id="c-nom" name="nom" autocomplete="family-name" placeholder="Votre nom" required />
               </div>
             </div>
-            <div class="form-group">
-              <label for="c-email">Email *</label>
-              <input type="email" id="c-email" name="email" autocomplete="email" placeholder="vous@exemple.com" required />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-email">Email *</label>
+                <input type="email" id="c-email" name="email" autocomplete="email" placeholder="vous@exemple.com" required />
+              </div>
+              <div class="form-group">
+                <label for="c-telephone">Téléphone</label>
+                <input type="tel" id="c-telephone" name="telephone" autocomplete="tel" inputmode="tel" placeholder="0690 12 34 56" pattern="[0-9 +.]{6,20}" title="Chiffres, espaces, points et + uniquement" />
+              </div>
             </div>
             <div class="form-group">
               <label for="c-sujet">Sujet *</label>
