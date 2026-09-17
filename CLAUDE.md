@@ -129,6 +129,17 @@ Les autres pages (`index.html`, `commercants.html`, `contact.html`,
 dupliqués : une modification doit être répercutée partout, y compris dans le
 gabarit d'article de `tools/build-blog.js`.
 
+**`debloquercommande.html` est une page de rebond, pas une page de contenu.**
+C'est l'URL du bouton des mails « commande en attente de validation » envoyés
+aux commerçants (scénario Make.com) : `https://gaspiz.fr/debloquercommande/`.
+Elle datait de WordPress et avait disparu à la refonte — les commerçants
+tombaient sur une 404. Sur téléphone elle ouvre l'appli (`gaspiz://gaspiz.com/`
+sur iOS, une URL `intent://` sur Android pour bénéficier du repli natif), sur
+ordinateur elle renvoie vers la version web `https://gaspiz.app/`. Des mails
+sont déjà partis avec cette URL : **ne jamais la renommer ni la supprimer**.
+Elle est en `noindex` et volontairement absente de `PAGES_FIXES`.
+Son style est inline : elle doit s'afficher sans attendre `style.css`.
+
 **`404.html` n'utilise que des chemins absolus** (`/style.css`, `/img/…`) :
 Apache la sert pour n'importe quelle URL inexistante, y compris sous `/blog/`,
 où des chemins relatifs pointeraient à côté. Ne pas les repasser en relatif.

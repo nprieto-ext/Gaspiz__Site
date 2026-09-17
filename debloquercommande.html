@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <title>Valider une commande | Gaspiz</title>
+
+  <!-- Page de rebond, pas une page de contenu : elle ne doit jamais remonter
+       dans Google, d'où le noindex et son absence de PAGES_FIXES (sitemap). -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Elle existait du temps de WordPress : c'est l'URL du bouton des mails
+       « commande en attente de validation » envoyés aux commerçants (scénario
+       Make.com). Ces mails sont déjà partis, l'URL ne peut donc plus changer.
+       Sur téléphone elle ouvre l'appli, sur ordinateur la version web.
+
+       Le style est écrit ici plutôt que dans style.css : la page se contente
+       de rebondir, elle doit s'afficher sans attendre une feuille externe, et
+       n'est visible que dans le cas de repli (appli absente du téléphone). -->
+  <style>
+    :root {
+      --yellow: #FFC800;
+      --yellow-dark: #E6B400;
+      --cream: #FFFDF8;
+      --dark: #241E0F;
+      --grey: #6E6552;
+      --border: #EFE6C8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--cream);
+      color: var(--dark);
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px 28px;
+      box-shadow: 0 20px 50px rgba(36, 30, 15, 0.10);
+    }
+    .logo { width: 180px; height: auto; margin-bottom: 20px; }
+    h1 { font-size: 1.5rem; margin: 0 0 12px; line-height: 1.3; }
+    p { color: var(--grey); line-height: 1.6; margin: 0 0 20px; }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 999px;
+      background: var(--yellow);
+      color: var(--dark);
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: var(--yellow-dark); }
+    .stores { margin-top: 26px; }
+    .stores p { font-size: 0.9rem; margin-bottom: 12px; }
+    .stores img { width: 150px; height: auto; margin: 6px; }
+    .home { display: block; margin-top: 26px; font-size: 0.85rem; color: var(--grey); }
+    /* Masqué tant que la bascule automatique n'a pas échoué. */
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img src="/img/2025-04-Gaspiz_avectitre_compress-300x99.png" alt="Gaspiz" class="logo" />
+    <h1>Commande en attente de validation</h1>
+
+    <p id="message">Ouverture de votre espace commerçant…</p>
+
+    <a id="action" class="btn" href="https://gaspiz.app/commandeadebloquer">Valider ma commande</a>
+
+    <div class="stores" id="stores" hidden>
+      <p>L'application n'est pas installée sur ce téléphone ?</p>
+      <a href="https://apps.apple.com/fr/app/gaspiz/id6738059463" target="_blank" rel="noopener">
+        <img src="/app-store.webp" alt="Télécharger sur l'App Store" width="650" height="210" />
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.mycompany.gaspiz" target="_blank" rel="noopener">
+        <img src="/play-store.webp" alt="Disponible sur Google Play" width="650" height="209" />
+      </a>
+    </div>
+
+    <a class="home" href="/">Retour sur gaspiz.fr</a>
+  </main>
+
+  <script>
+    (function () {
+      // Route FlutterFlow de l'écran de validation, côté appli comme côté web.
+      var ROUTE = 'commandeadebloquer';
+      // Schéma déclaré par l'appli (AndroidManifest + Info.plist) : le host
+      // est bien « gaspiz.com », pas gaspiz.fr. Ne pas le « corriger ».
+      var APPLI = 'gaspiz://gaspiz.com/' + ROUTE;
+      var WEB = 'https://gaspiz.app/' + ROUTE;
+
+      // Android sait faire mieux qu'un schéma nu : avec une URL intent:// il
+      // ouvre l'appli si elle est installée, et part tout seul sur l'adresse
+      // de repli sinon. Sans ça, un schéma gaspiz:// inconnu affiche une page
+      // d'erreur Chrome et le commerçant est perdu.
+      var INTENT = 'intent://gaspiz.com/' + ROUTE + '#Intent;scheme=gaspiz;'
+        + 'package=com.mycompany.gaspiz;'
+        + 'S.browser_fallback_url=' + encodeURIComponent(WEB) + ';end';
+
+      var android = /android/i.test(navigator.userAgent);
+      var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      var message = document.getElementById('message');
+      var action = document.getElementById('action');
+
+      if (!android && !ios) {
+        // Ordinateur : pas d'appli installable, on envoie vers la version web.
+        location.replace(WEB);
+        return;
+      }
+
+      message.textContent = 'Ouverture de l’application Gaspiz…';
+      action.textContent = 'Ouvrir l’application';
+      action.href = android ? INTENT : APPLI;
+      location.href = android ? INTENT : APPLI;
+
+      // Si l'appli s'ouvre, le navigateur passe en arrière-plan et ce minuteur
+      // ne verra jamais la page « visible » : le repli ne s'affiche donc que
+      // lorsque l'appli est absente du téléphone.
+      setTimeout(function () {
+        if (document.visibilityState !== 'visible') return;
+        message.textContent = 'Validez votre commande dans l’application, ou depuis la version web si vous ne l’avez pas installée.';
+        action.textContent = 'Ouvrir la version web';
+        action.href = WEB;
+        document.getElementById('stores').hidden = false;
+      }, 2000);
+    })();
+  </script>
+
+  <noscript>
+    <p style="margin-top: 16px;">
+      <a href="https://gaspiz.app/commandeadebloquer">Valider ma commande sur la version web</a>
+    </p>
+  </noscript>
+</body>
+</html>
