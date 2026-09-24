@@ -75,6 +75,7 @@ Champs **obligatoires** : `titre`, `date` (format `AAAA-MM-JJ`), `description`.
 | `slug` | force l'URL au lieu de la déduire du nom de fichier | nom de fichier sans la date |
 | `mois` | force le libellé de date affiché | déduit de `date` |
 | `signature` | signature en fin d'article, `non` pour l'enlever | `L'équipe Gaspiz` |
+| `page` | la carte renvoie vers cette page du site (`jeu-concours.html`) au lieu d'une page d'article : aucune page `blog/` générée, le corps du `.md` est ignoré | aucune |
 | `brouillon` | `oui` = article ignoré, ni page ni carte ni sitemap | `non` |
 
 Une valeur contenant `:` doit être entre guillemets :

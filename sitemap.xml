@@ -27,6 +27,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://gaspiz.fr/jeu-concours</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://gaspiz.fr/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
@@ -48,7 +53,7 @@
   </url>
   <url>
     <loc>https://gaspiz.fr/blog</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

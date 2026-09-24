@@ -32,6 +32,7 @@ const EMOJI_CATEGORIE = {
   'Partenaires': '🤝',
   'Coulisses': '💛',
   'Actualité': '✨',
+  'Jeu concours': '🎉',
 };
 
 /* ------------------------------------------------------------------ */
@@ -348,6 +349,9 @@ function chargerArticles() {
       image_entete_dim: meta.image_entete_dim || '',
       image_entete_credit: meta.image_entete_credit || '',
       lien: meta.lien || "Lire l'article →",
+      // Carte qui renvoie vers une page du site écrite à la main (ex. le jeu
+      // concours) : pas de page d'article générée, pas d'URL /blog/ au sitemap.
+      page: meta.page || '',
       signature: meta.signature === 'non' ? null : (meta.signature || "L'équipe Gaspiz"),
       corps,
     };
@@ -582,7 +586,8 @@ function carte(a, i) {
     ? `<div class="blog-card-cover" style="background: var(--white); display: flex; align-items: center; justify-content: center;"><img src="${escAttr(a.image)}" alt="${escAttr(a.image_alt)}" loading="lazy" style="width: ${escAttr(a.image_largeur)}; height: auto; object-fit: contain;"${dimensions(a.image_dim)} /></div>`
     : `<div class="blog-card-cover"></div>`;
 
-  return `        <a href="blog/${a.slug}.html" class="blog-card reveal"${delay}>
+  const href = a.page || `blog/${a.slug}.html`;
+  return `        <a href="${escAttr(href)}" class="blog-card reveal"${delay}>
           ${couverture}
           <div class="blog-card-body">
             <div class="blog-meta"><span>${esc(a.mois)}</span> · <span>${esc(a.categorie)}</span></div>
@@ -620,6 +625,7 @@ const PAGES_FIXES = [
   { loc: '/telecharger', changefreq: 'monthly', priority: '0.8' },
   { loc: '/applicationnondisponible', changefreq: 'monthly', priority: '0.7' },
   { loc: '/contact', changefreq: 'monthly', priority: '0.6' },
+  { loc: '/jeu-concours', changefreq: 'weekly', priority: '0.5' },
   // Pages legales : priorite basse, elles n'ont pas a se positionner, mais
   // Google verifie leur existence pour juger du serieux du site.
   { loc: '/mentions-legales', changefreq: 'yearly', priority: '0.2' },
@@ -641,7 +647,7 @@ function majSitemap(articles) {
   const urls = PAGES_FIXES.map((p) => bloc(p.loc, p.changefreq, p.priority));
   if (articles.length) {
     urls.push(bloc('/blog', 'monthly', '0.7', articles[0].date));
-    for (const a of articles) {
+    for (const a of articles.filter((x) => !x.page)) {
       urls.push(bloc(`/blog/${a.slug}`, 'yearly', '0.5', a.date));
     }
   } else {
@@ -677,12 +683,13 @@ function main() {
   const articles = chargerArticles();
   const v = assetVersion();
 
-  for (const a of articles) {
+  const pagesArticles = articles.filter((a) => !a.page);
+  for (const a of pagesArticles) {
     ecrire(path.join(OUT_DIR, `${a.slug}.html`), pageArticle(a, v));
   }
 
   // Une page HTML dont le .md a disparu doit disparaître aussi.
-  const attendus = new Set(articles.map((a) => `${a.slug}.html`));
+  const attendus = new Set(pagesArticles.map((a) => `${a.slug}.html`));
   for (const f of fs.readdirSync(OUT_DIR)) {
     if (f.endsWith('.html') && !attendus.has(f)) {
       fs.unlinkSync(path.join(OUT_DIR, f));
