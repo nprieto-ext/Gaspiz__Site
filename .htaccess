@@ -75,7 +75,18 @@ ErrorDocument 404 /404.html
   ExpiresByType audio/mpeg        "access plus 6 months"
   ExpiresByType text/css          "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
-  ExpiresByType text/html         "access plus 1 hour"
+  ExpiresByType text/html         "access plus 0 seconds"
+</IfModule>
+
+# Les pages HTML ne sont jamais servies depuis un cache sans revérification :
+# avec 1 heure de cache, le CDN Hostinger gardait d'anciennes versions sur
+# certains de ses serveurs et une modification poussée mettait jusqu'à une
+# heure à apparaître pour tout le monde. Images, CSS et JS restent en cache
+# (le CSS et le JS sont versionnés avec ?v=).
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
 </IfModule>
 
 # --- Divers ------------------------------------------------------------
