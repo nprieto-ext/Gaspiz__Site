@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="style.css?v=20260911" />
   <style>
     .jc-affiche { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .jc-etapes { list-style: none; counter-reset: etape; margin: 0 0 1.5rem; padding: 0; }
+    .jc-etapes li { counter-increment: etape; position: relative; padding-left: 2.6rem; margin-bottom: 0.7rem; }
+    .jc-etapes li::before { content: counter(etape); position: absolute; left: 0; top: 0.2rem; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--dark); color: var(--yellow); font-family: var(--font-title); font-weight: 700; font-size: 1rem; line-height: 1.8rem; text-align: center; }
     .jc-resume { background: var(--yellow-light); border: 2px solid var(--yellow); border-radius: var(--radius); padding: 1.75rem 1.75rem 1.25rem; margin-bottom: 2.5rem; }
     .jc-resume h2 { margin-top: 0; }
     .jc-dates { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.25rem 0 0.5rem; }
@@ -91,11 +94,11 @@
         <div class="jc-resume">
           <h2>Comment participer ?</h2>
           <p>Sur <a href="https://www.instagram.com/gaspiz.fr" target="_blank" rel="noopener">Instagram</a> ou sur <a href="https://www.tiktok.com/@gaspiz.fr" target="_blank" rel="noopener">TikTok</a>, sous la publication du jeu concours :</p>
-          <ul>
+          <ol class="jc-etapes">
             <li><strong>Suis</strong> le compte <strong>@gaspiz.fr</strong></li>
             <li><strong>Like</strong> la publication du jeu concours</li>
             <li><strong>Commente</strong> ton territoire : <strong>Guadeloupe</strong>, <strong>Martinique</strong> ou <strong>Guyane</strong></li>
-          </ul>
+          </ol>
           <p>🍀 <strong>Double tes chances</strong> en partageant la publication du jeu en story et en identifiant <strong>@gaspiz.fr</strong>.</p>
           <div class="jc-dates">
             <div><span>Début</span><strong>Jeu. 24 sept.</strong></div>
@@ -170,11 +173,11 @@
         <p>La participation est strictement nominative. Il est interdit de participer à l'aide de plusieurs comptes. Tout compte manifestement faux ou créé pour l'occasion pourra être exclu.</p>
         <h3>Article 4 : Modalités de participation</h3>
         <p>Pour participer, le participant doit, sur Instagram et/ou TikTok :</p>
-        <ul>
+        <ol class="jc-etapes">
           <li>S'abonner au compte <strong>@gaspiz.fr</strong> ;</li>
           <li>Aimer la publication du jeu concours ;</li>
           <li>Commenter la publication en indiquant son territoire : <strong>Guadeloupe</strong>, <strong>Martinique</strong> ou <strong>Guyane</strong>.</li>
-        </ul>
+        </ol>
         <p><strong>Chance supplémentaire :</strong> le participant peut doubler ses chances en partageant la publication du jeu en story en identifiant <strong>@gaspiz.fr</strong>. Pour être prise en compte, la story doit être publiée pendant la durée du jeu : elle est validée dès lors que l'Organisateur a reçu la notification d'identification pendant cette période, même si la story a disparu depuis.</p>
         <p>Un participant peut jouer sur Instagram et sur TikTok. Chaque réseau compte pour une participation distincte, mais un même participant ne peut remporter qu'un seul lot sur l'ensemble du jeu.</p>
         <p>Toute participation incomplète, frauduleuse ou effectuée après la date de clôture ne sera pas prise en compte.</p>
