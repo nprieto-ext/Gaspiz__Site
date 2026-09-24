@@ -616,6 +616,31 @@ function majBlogIndex(articles) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Génération : les derniers articles sur la page d'accueil            */
+/* ------------------------------------------------------------------ */
+
+const DEBUT_ACCUEIL = '<!-- ACCUEIL-BLOG:START — les 3 derniers articles, généré par tools/build-blog.js, ne pas éditer à la main -->';
+const FIN_ACCUEIL = '<!-- ACCUEIL-BLOG:END -->';
+const NB_ARTICLES_ACCUEIL = 3;
+
+function majAccueil(articles) {
+  const chemin = path.join(ROOT, 'index.html');
+  const html = fs.readFileSync(chemin, 'utf8');
+  const debut = html.indexOf(DEBUT_ACCUEIL);
+  const fin = html.indexOf(FIN_ACCUEIL);
+  if (debut === -1 || fin === -1) {
+    throw new Error(
+      'index.html : marqueurs ACCUEIL-BLOG:START / ACCUEIL-BLOG:END introuvables. ' +
+      'Ils délimitent les derniers articles de l\'accueil, ne les supprimez pas.');
+  }
+  const grille = articles.slice(0, NB_ARTICLES_ACCUEIL).map(carte).join('\n');
+  const nouveau = html.slice(0, debut + DEBUT_ACCUEIL.length) +
+    '\n' + grille + '\n        ' +
+    html.slice(fin);
+  return ecrire(chemin, nouveau);
+}
+
+/* ------------------------------------------------------------------ */
 /* Génération : sitemap.xml                                            */
 /* ------------------------------------------------------------------ */
 
@@ -698,6 +723,7 @@ function main() {
   }
 
   majBlogIndex(articles);
+  majAccueil(articles);
   majSitemap(articles);
 
   console.log(`${articles.length} article(s) lus depuis content/blog/.`);

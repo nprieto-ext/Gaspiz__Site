@@ -20,6 +20,7 @@ Tout le reste est produit par `tools/build-blog.js` :
 | --- | --- |
 | `blog/<slug>.html` | le fichier `.md` correspondant |
 | la grille de cartes dans `blog.html` (entre `BLOG-GRID:START` et `BLOG-GRID:END`) | tous les `.md` |
+| les 3 dernières cartes de `index.html` (entre `ACCUEIL-BLOG:START` et `ACCUEIL-BLOG:END`) | les 3 `.md` les plus récents |
 | `sitemap.xml` | pages fixes + tous les `.md` |
 
 Après avoir touché un `.md`, lancer :

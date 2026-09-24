@@ -39,6 +39,6 @@ jobs:
           fi
           git config user.name "Gaspiz Bot"
           git config user.email "actions@github.com"
-          git add blog/ blog.html sitemap.xml
+          git add blog/ blog.html index.html sitemap.xml
           git commit -m "Regenere le blog [skip ci]"
           git push
