@@ -17,6 +17,9 @@
   <meta property="og:url" content="https://gaspiz.fr/jeu-concours" />
   <meta property="og:site_name" content="Gaspiz" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://gaspiz.fr/img/2026-09-jeu-concours-carte.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,6 +27,7 @@
 
   <link rel="stylesheet" href="style.css?v=20260911" />
   <style>
+    .jc-affiche { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow); }
     .jc-resume { background: var(--yellow-light); border: 2px solid var(--yellow); border-radius: var(--radius); padding: 1.75rem 1.75rem 1.25rem; margin-bottom: 2.5rem; }
     .jc-resume h2 { margin-top: 0; }
     .jc-dates { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.25rem 0 0.5rem; }
@@ -81,6 +85,8 @@
   <section class="article-body">
     <div class="section-container">
       <div class="article-wrap">
+
+        <img class="jc-affiche" src="img/2026-09-jeu-concours.webp" alt="Grand jeu concours d'automne Gaspiz : Guyane, Martinique, Guadeloupe" width="540" height="960" />
 
         <div class="jc-resume">
           <h2>Comment participer ?</h2>
