@@ -34,6 +34,11 @@ RewriteRule ^commercants-gaspiz-application-commercants-guadeloupe-martinique-gu
 RewriteRule ^privacy-policy/?$ /confidentialite [R=301,L]
 RewriteRule ^politique-de-confidentialite/?$ /confidentialite [R=301,L]
 
+# --- Affiche A4 à imprimer pour les commerçants ----------------------
+# Le bouton « Affiche » de l'appli pointe vers le site : /affiche mène
+# directement au PDF, servi tel quel à /affiche.pdf.
+RewriteRule ^affiche/?$ /affiche.pdf [R=301,L]
+
 # --- Slash final retiré ------------------------------------------------
 # WordPress servait toutes ses URLs avec un slash final. On les ramène
 # vers la forme sans slash, qui est la forme canonique du nouveau site.
