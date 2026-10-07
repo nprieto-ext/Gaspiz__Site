@@ -26,6 +26,8 @@ RewriteRule (^|/)\.(github|git) - [F,L]
 # /applicationnondisponible existe toujours à l'identique : pas de
 # redirection, la page est servie directement.
 RewriteRule ^telecharger-gaspiz-application-anti-gaspi/?$ /telecharger [R=301,L]
+# QR code imprimé sur l'affiche A4 déjà en circulation dans les commerces.
+RewriteRule ^telecharger-gaspiz/?$ /telecharger [R=301,L]
 RewriteRule ^commercants-gaspiz-application-commercants-guadeloupe-martinique-guyane/?$ /commercants [R=301,L]
 
 # --- Politique de confidentialité : URL déclarée à Google Play ---------
