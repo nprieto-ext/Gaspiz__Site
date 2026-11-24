@@ -199,12 +199,31 @@ const BLOCS = {
         </div>`;
   },
 
+  // Encart jaune avec un gros bouton (ex. télécharger l'appli).
+  bouton(a, fichier) {
+    if (!a.url || !a.libelle) throw new Error(`${fichier} : bloc :::bouton, url="…" et libelle="…" obligatoires.`);
+    const titre = a.titre ? `\n          <p style="font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.5rem; line-height: 1.25; color: var(--dark); margin: 0 0 0.5rem;">${esc(a.titre)}</p>` : '';
+    const texte = a.texte ? `\n          <p style="color: var(--dark); margin: 0 0 1.4rem;">${esc(a.texte)}</p>` : '';
+    return `        <div style="background: var(--yellow); border-radius: var(--radius); padding: 2rem 1.5rem; margin: 2.5rem 0; text-align: center;">${titre}${texte}
+          <a href="${escAttr(a.url)}" class="btn btn-dark" style="text-decoration: none;">${esc(a.libelle)}</a>
+        </div>`;
+  },
+
+  // Vidéo courte hébergée sur le site, muette et en boucle (ex. démo de l'appli).
+  demo(a, fichier) {
+    if (!a.fichier) throw new Error(`${fichier} : bloc :::demo, fichier="…" manquant.`);
+    const affiche = a.affiche ? ` poster="${escAttr(asset(a.affiche))}"` : '';
+    return `        <figure class="article-image" style="max-width: ${escAttr(a.largeur || '300px')};">
+          <video src="${escAttr(asset(a.fichier))}"${affiche} aria-label="${escAttr(a.alt || '')}" autoplay muted loop playsinline preload="metadata" style="display: block; width: 100%; height: auto;"></video>
+        </figure>`;
+  },
+
   image(a, fichier) {
     if (!a.fichier) throw new Error(`${fichier} : bloc :::image, fichier="…" manquant.`);
     const legende = a.credit
       ? `\n          <figcaption class="photo-credit">© ${esc(a.credit)}</figcaption>`
       : '';
-    return `        <figure class="article-image">
+    return `        <figure class="article-image"${a.largeur ? ` style="max-width: ${escAttr(a.largeur)};"` : ""}>
           <img src="${escAttr(asset(a.fichier))}" alt="${escAttr(a.alt || '')}" loading="lazy" />${legende}
         </figure>`;
   },
@@ -331,6 +350,9 @@ function chargerArticles() {
       fichier,
       slug,
       titre: meta.titre,
+      titre_seo: meta.titre_seo || `${meta.titre} | Blog Gaspiz`,
+      image_partage: meta.image_partage || '',
+      modifie: meta.modifie || meta.date,
       date: meta.date,
       mois: meta.mois || moisAnnee(meta.date),
       categorie,
@@ -382,9 +404,13 @@ function pageArticle(a, v) {
     '@type': 'Article',
     headline: a.titre,
     description: a.description,
+    image: `${SITE}/${a.image_partage || 'img/og-gaspiz.jpg'}`,
     datePublished: a.date,
-    author: { '@type': 'Organization', name: 'Gaspiz' },
-    publisher: { '@type': 'Organization', name: 'Gaspiz' },
+    dateModified: a.modifie,
+    inLanguage: 'fr-FR',
+    mainEntityOfPage: url,
+    author: { '@type': 'Organization', name: 'Gaspiz', url: SITE },
+    publisher: { '@type': 'Organization', name: 'Gaspiz', url: SITE, logo: { '@type': 'ImageObject', url: `${SITE}/img/icon-512.png` } },
   }, null, 2).split('\n').map((l) => '  ' + l).join('\n');
 
   const imageEnteteCredit = a.image_entete_credit
@@ -407,7 +433,7 @@ function pageArticle(a, v) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
-  <title>${esc(a.titre)} | Blog Gaspiz</title>
+  <title>${esc(a.titre_seo)}</title>
   <meta name="description" content="${escAttr(a.description)}" />
   <meta name="author" content="Gaspiz" />
   <meta name="robots" content="index, follow" />
@@ -419,15 +445,15 @@ function pageArticle(a, v) {
   <meta property="og:url" content="${url}" />
   <meta property="og:site_name" content="Gaspiz" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:image" content="${SITE}/img/og-gaspiz.jpg" />
+  <meta property="og:image" content="${SITE}/${a.image_partage || 'img/og-gaspiz.jpg'}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Gaspiz, l'application anti-gaspi de Guadeloupe, Martinique et Guyane" />
+  <meta property="og:image:alt" content="${a.image_partage ? escAttr(a.titre) : "Gaspiz, l'application anti-gaspi de Guadeloupe, Martinique et Guyane"}" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${escAttr(a.titre)}" />
   <meta name="twitter:description" content="${escAttr(a.partage)}" />
-  <meta name="twitter:image" content="${SITE}/img/og-gaspiz.jpg" />
+  <meta name="twitter:image" content="${SITE}/${a.image_partage || 'img/og-gaspiz.jpg'}" />
 
   <script type="application/ld+json">
 ${jsonLd}

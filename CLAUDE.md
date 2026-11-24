@@ -104,6 +104,20 @@ Quatre blocs spéciaux, chacun seul sur sa ligne, valeurs entre guillemets :
 
 `:::video` récupère la vignette YouTube automatiquement.
 
+Deux autres blocs, et une option :
+
+```markdown
+:::demo fichier="img/2026-11-appli-demo.mp4" affiche="img/2026-11-appli-gaspiz.webp" alt="Description" largeur="300px"
+
+:::bouton titre="Prêt à payer moins cher ?" texte="Une phrase." url="https://gaspiz.fr/telecharger" libelle="Télécharger Gaspiz"
+```
+
+`:::demo` = petite vidéo muette en boucle hébergée sur le site (rester sous 1,5 Mo).
+`:::image` accepte aussi `largeur="100%"` (440 px par défaut), utile pour un schéma.
+
+En-tête, champs facultatifs : `titre_seo` (balise title, 60 caractères environ),
+`image_partage` (JPG 1200x630 pour les réseaux et Google), `modifie` (date de mise à jour).
+
 ## Images
 
 Les visuels vont dans `img/`, nommés `AAAA-MM-sujet.webp`. Préférer le WebP et
