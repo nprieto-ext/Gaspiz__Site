@@ -205,7 +205,7 @@ const BLOCS = {
     const titre = a.titre ? `\n          <p style="font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.5rem; line-height: 1.25; color: var(--dark); margin: 0 0 0.5rem;">${esc(a.titre)}</p>` : '';
     const texte = a.texte ? `\n          <p style="color: var(--dark); margin: 0 0 1.4rem;">${esc(a.texte)}</p>` : '';
     return `        <div style="background: var(--yellow); border-radius: var(--radius); padding: 2rem 1.5rem; margin: 2.5rem 0; text-align: center;">${titre}${texte}
-          <a href="${escAttr(a.url)}" class="btn btn-dark" style="text-decoration: none;">${esc(a.libelle)}</a>
+          <a href="${escAttr(a.url)}" class="btn btn-dark" style="text-decoration: none; white-space: normal; max-width: 100%; line-height: 1.3; text-align: center; justify-content: center;">${esc(a.libelle)}</a>
         </div>`;
   },
 
