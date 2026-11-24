@@ -11,7 +11,7 @@ image: img/2026-11-vie-chere-vignette.webp
 image_largeur: 100%
 image_alt: Panier anti-gaspi de fruits et légumes
 image_entete: img/2026-11-vie-chere-panier.webp
-image_entete_alt: Panier anti-gaspi de fruits et légumes de Soleil Fruits, en Guadeloupe
+image_entete_alt: Panier anti-gaspi de fruits et légumes en Guadeloupe
 image_entete_largeur: 420px
 image_entete_credit: Gaspiz
 ---
@@ -83,10 +83,19 @@ Chaque jour, des commerçants de qualité se retrouvent avec des invendus encore
 
 :::demo fichier="img/2026-11-appli-demo.mp4" affiche="img/2026-11-appli-gaspiz.webp" alt="Démonstration : réserver un panier dans l'application Gaspiz" largeur="300px"
 
-Le principe est simple : vous réservez dans l'appli, vous payez directement le commerçant et vous repartez avec votre panier. On y trouve des boulangers-pâtissiers, des primeurs, des restaurateurs, des traiteurs... Deux exemples, aux prix relevés en novembre 2026 :
+Le principe est simple : vous réservez dans l'appli, vous payez directement le commerçant et vous repartez avec votre panier. On y trouve des boulangers-pâtissiers, des primeurs, des restaurateurs, des traiteurs...
 
-- **Côté primeur :** le panier de fruits et légumes en photo en haut de l'article, 10 € au lieu de 20 € chez **Soleil Fruits**, à Saint-François.
-- **Côté boulanger-pâtissier :** le panier de la **Boulangerie Nicolhas**, à Sainte-Anne, bien achalandé, à 5 € au lieu de 10 € et noté 4,8/5 par les clients Gaspiz. Le contenu change selon les invendus du jour.
+Avec une soixantaine de commerçants partenaires, il y en a pour tous les goûts. Quelques exemples, aux prix relevés dans l'appli le 24 novembre 2026 :
+
+- **Boulanger-pâtissier :** Boulangerie Nicolhas à Sainte-Anne, 5 € au lieu de 10 €
+- **Primeur :** Monsieur Légumes à Capesterre-Belle-Eau, 6 € au lieu de 12 €
+- **Restaurateur-traiteur :** Le Mil' Flè Traiteur à Pointe-à-Pitre, 7 € au lieu de 14 €
+- **Boucher-traiteur :** La Boudinière à Baie-Mahault, 12 € au lieu de 24 €
+- **Supermarché :** Carrefour Express au Lamentin (Guadeloupe), 10 € au lieu de 20 €
+- **En Martinique :** La Croissanterie Cluny à Fort-de-France, 6 € au lieu de 12 €, ou L'Épicerie du Château au Lamentin, 15 € au lieu de 30 €
+- **En Guyane :** Pizza Lyght à Cayenne, 9 € au lieu de 20 €, ou Café Bonjour à Saint-Laurent-du-Maroni, 6 € au lieu de 12 €
+
+Le contenu change selon les invendus du jour : c'est tout le plaisir du panier surprise.
 
 C'est aussi une façon de se faire plaisir et de **découvrir de nouveaux commerçants** près de chez soi, en Guadeloupe, en Martinique et en Guyane. [Voir nos commerçants partenaires](https://gaspiz.fr/commercants).
 
