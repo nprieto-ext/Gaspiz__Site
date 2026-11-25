@@ -104,22 +104,4 @@ C'est aussi une façon de se faire plaisir et de **découvrir de nouveaux commer
 
 On ne changera pas la distance avec l'Hexagone. Mais en achetant local et de saison, en comparant les prix et en sauvant des paniers, on reprend la main sur son budget, tout en soutenant ceux qui produisent et cuisinent ici.
 
-## Questions fréquentes
-
-### Pourquoi la vie est-elle plus chère aux Antilles et en Guyane ?
-
-Plusieurs causes s'additionnent : l'éloignement et le coût du transport, l'octroi de mer, la petite taille des marchés, la faible concurrence et la dépendance aux importations.
-
-### De combien les produits alimentaires sont-ils plus chers ?
-
-D'après l'Insee, en 2022, de 42 % en Guadeloupe, 40 % en Martinique et 39 % en Guyane par rapport à l'Hexagone.
-
-### Comment faire ses courses moins cher en Guadeloupe, Martinique ou Guyane ?
-
-Achetez local et de saison, comparez les prix au kilo, allez directement chez les primeurs et les producteurs, et récupérez des paniers d'invendus avec une application anti-gaspi comme Gaspiz.
-
-### Combien coûte un panier anti-gaspi ?
-
-Sur Gaspiz, les paniers sont proposés à partir de 5 € en moyenne, selon le commerçant et le contenu. Le paiement se fait sur place, directement auprès du commerçant.
-
 :::bouton titre="Prêt à payer moins cher ?" texte="Gaspiz est gratuite, sur iPhone et Android, en Guadeloupe, Martinique et Guyane." url="https://gaspiz.fr/telecharger" libelle="Télécharger Gaspiz et réserver mon premier panier"
