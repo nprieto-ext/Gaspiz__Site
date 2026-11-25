@@ -50,6 +50,10 @@ RewriteRule ^(.+?)/+$ /$1 [R=301,L]
 # --- URL canonique : /page.html -> /page -------------------------------
 # Le test sur THE_REQUEST ne matche que la requête d'origine du navigateur,
 # jamais une réécriture interne : pas de boucle avec la règle suivante.
+# Exception : les fichiers de validation Google Search Console
+# (google<code>.html) doivent répondre 200 à leur URL exacte, sans
+# redirection. Ne pas les supprimer, sinon le site perd sa validation.
+RewriteCond %{REQUEST_URI} !^/google[0-9a-f]+\.html$
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
