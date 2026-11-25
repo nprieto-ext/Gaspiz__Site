@@ -248,7 +248,8 @@ function corpsHtml(corps, fichier) {
   const flushListe = () => {
     if (liste) {
       const items = liste.map((item) => `          <li>${inline(item)}</li>`);
-      out.push({ type: 'p', html: ['        <ul>', ...items, '        </ul>'].join('\n') });
+      const classe = liste.fleches ? ' class="fleches"' : '';
+      out.push({ type: 'p', html: [`        <ul${classe}>`, ...items, '        </ul>'].join('\n') });
       liste = null;
     }
   };
@@ -287,9 +288,14 @@ function corpsHtml(corps, fichier) {
       out.push({ type: 'p', html: `        <blockquote>${inline(t.slice(2))}</blockquote>` });
       continue;
     }
-    if (/^[-*]\s+/.test(t)) {
+    // « - » : liste à points ; « -> » : liste à flèches noires.
+    const puce = t.match(/^(->|[-*])\s+(.*)$/);
+    if (puce) {
       flushPara();
-      (liste = liste || []).push(t.replace(/^[-*]\s+/, ''));
+      const fleches = puce[1] === '->';
+      if (liste && liste.fleches !== fleches) flushListe();
+      if (!liste) { liste = []; liste.fleches = fleches; }
+      liste.push(puce[2]);
       continue;
     }
     if (t.startsWith('#')) {

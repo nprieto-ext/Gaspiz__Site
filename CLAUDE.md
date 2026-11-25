@@ -85,7 +85,7 @@ Une valeur contenant `:` doit être entre guillemets :
 ### Corps de l'article
 
 Markdown simple : `## Intertitre`, `### Sous-titre`, paragraphes séparés par une
-ligne vide, `**gras**`, `*italique*`, `[lien](https://…)`, listes à tirets,
+ligne vide, `**gras**`, `*italique*`, `[lien](https://…)`, listes à tirets (`- ` = points, `-> ` = flèches noires),
 `> citation`. Le `#` seul est refusé : le titre de l'article est dans l'en-tête.
 
 Quatre blocs spéciaux, chacun seul sur sa ligne, valeurs entre guillemets :

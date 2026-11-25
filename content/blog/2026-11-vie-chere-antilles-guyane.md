@@ -1,16 +1,17 @@
 ---
-titre: "Vie chère aux Antilles-Guyane : pourquoi tout coûte plus cher et comment payer moins"
+titre: "Vie chère aux Antilles-Guyane : pourquoi tout coûte plus cher et comment payer moins ?"
 titre_seo: "Vie chère aux Antilles-Guyane : causes et 7 solutions | Gaspiz"
-image_partage: img/2026-11-vie-chere-partage.jpg
+image_partage: img/2026-11-vie-chere-partage-v2.jpg
 date: 2026-11-24
+modifie: 2026-11-25
 categorie: Conseils
 emoji: 💡
 description: Pourquoi la vie est-elle plus chère en Guadeloupe, Martinique et Guyane ? Les vraies raisons et 7 réflexes simples pour alléger son budget courses.
 chapeau: "Les produits alimentaires coûtent environ 40 % de plus que dans l'Hexagone. On vous explique pourquoi, et surtout comment faire des économies."
-image: img/2026-11-vie-chere-vignette.webp
+image: img/2026-11-vie-chere-vignette-v2.webp
 image_largeur: 100%
 image_alt: Panier anti-gaspi de fruits et légumes
-image_entete: img/2026-11-vie-chere-panier.webp
+image_entete: img/2026-11-vie-chere-panier-v2.webp
 image_entete_alt: Panier anti-gaspi de fruits et légumes en Guadeloupe
 image_entete_largeur: 420px
 image_entete_credit: Gaspiz
@@ -22,9 +23,9 @@ Remplir son frigo aux Antilles-Guyane, c'est souvent la mauvaise surprise au mom
 
 Selon [l'Insee](https://www.insee.fr/fr/statistiques/7648939), les produits alimentaires étaient en 2022 plus chers que dans l'Hexagone de :
 
-- **42 % en Guadeloupe**
-- **40 % en Martinique**
-- **39 % en Guyane**
+-> **42 % en Guadeloupe**
+-> **40 % en Martinique**
+-> **39 % en Guyane**
 
 Tous produits confondus, l'écart est de 16 % en Guadeloupe et de 14 % en Martinique et en Guyane. C'est donc bien dans l'assiette que la différence se sent le plus.
 
@@ -32,10 +33,10 @@ Tous produits confondus, l'écart est de 16 % en Guadeloupe et de 14 % en Martin
 
 Il n'y a pas un seul coupable. [Un rapport du Sénat](https://www.senat.fr/rap/r24-514/r24-514_mono.html) publié en avril 2025 cite plusieurs causes qui s'additionnent :
 
-- **L'éloignement.** Beaucoup de produits traversent l'Atlantique. Avec la manutention et le carburant, le fret maritime pèse en moyenne 10 % du prix.
-- **L'octroi de mer.** Cette taxe représenterait environ 5 % du prix final en moyenne, avec de gros écarts d'un produit à l'autre.
-- **De petits marchés.** Moins d'habitants, donc moins de volumes et des coûts plus difficiles à répartir.
-- **Une faible concurrence et une forte dépendance aux importations.**
+-> **L'éloignement.** Beaucoup de produits traversent l'Atlantique. Avec la manutention et le carburant, le fret maritime pèse en moyenne 10 % du prix.
+-> **L'octroi de mer.** Cette taxe représenterait environ 5 % du prix final en moyenne, avec de gros écarts d'un produit à l'autre.
+-> **De petits marchés.** Moins d'habitants, donc moins de volumes et des coûts plus difficiles à répartir.
+-> **Une faible concurrence et une forte dépendance aux importations.**
 
 :::image fichier="img/2026-11-schema-import.webp" alt="Schéma : le parcours d'un produit importé, du fret maritime et de l'octroi de mer jusqu'au caddie, comparé au circuit court" largeur="100%" credit="Gaspiz"
 
@@ -63,9 +64,9 @@ Moins il y a d'intermédiaires, plus le prix peut être juste. Certains professi
 
 Une promo n'est pas toujours une bonne affaire. C'est aussi un outil marketing, qui attire en magasin et pousse à acheter plus que prévu, et qui ne profite pas forcément aux producteurs locaux. Trois questions à se poser :
 
-- Quel est le **prix au kilo** ou au litre ?
-- Combien coûtait ce produit **avant** la promo ?
-- Est-ce que j'en avais vraiment **besoin** ?
+-> Quel est le **prix au kilo** ou au litre ?
+-> Combien coûtait ce produit **avant** la promo ?
+-> Est-ce que j'en avais vraiment **besoin** ?
 
 Dans l'exemple ci-dessous, le prix barré attire l'œil, mais le produit sans promo revient moins cher au kilo.
 

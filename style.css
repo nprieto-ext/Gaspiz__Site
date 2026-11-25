@@ -1820,6 +1820,7 @@ button {
 }
 
 .article-body ul {
+  list-style: disc;
   margin: 0 0 1.5rem 1.25rem;
   padding: 0;
 }
@@ -1833,8 +1834,27 @@ button {
 }
 
 .article-body li::marker {
-  color: var(--yellow);
-  font-size: 1.1em;
+  color: var(--dark);
+}
+
+/* Liste à flèches noires (« -> » dans le Markdown) */
+.article-body ul.fleches {
+  list-style: none;
+  margin-left: 0;
+}
+
+.article-body ul.fleches li {
+  position: relative;
+  padding-left: 1.7rem;
+}
+
+.article-body ul.fleches li::before {
+  content: "\2192";
+  content: "\2192" / "";
+  position: absolute;
+  left: 0;
+  color: var(--dark);
+  font-weight: 700;
 }
 
 /* Image insérée dans le corps d'un article via le bloc :::image */
