@@ -105,3 +105,17 @@ C'est aussi une façon de se faire plaisir et de **découvrir de nouveaux commer
 On ne changera pas la distance avec l'Hexagone. Mais en achetant local et de saison, en comparant les prix et en sauvant des paniers, on reprend la main sur son budget, tout en soutenant ceux qui produisent et cuisinent ici.
 
 :::bouton titre="Prêt à payer moins cher ?" texte="Gaspiz est gratuite, sur iPhone et Android, en Guadeloupe, Martinique et Guyane." url="https://gaspiz.fr/telecharger" libelle="Télécharger Gaspiz et réserver mon premier panier"
+
+## Questions fréquentes
+
+### Qu'est-ce que l'octroi de mer ?
+
+C'est une taxe perçue au profit des collectivités locales d'outre-mer. Elle s'applique aux marchandises qui arrivent sur le territoire, mais aussi à certains produits fabriqués sur place. [Selon la douane](https://www.douane.gouv.fr/lexique/octroi-de-mer), elle sert à financer des infrastructures et des services publics, et à soutenir l'économie locale.
+
+### Qu'est-ce que le bouclier qualité-prix (BQP) ?
+
+C'est un accord entre l'État et des enseignes volontaires, qui s'engagent à maintenir un panier de produits courants à un prix modéré pendant un an. En 2026, dans les grandes surfaces signataires, il comprend 106 produits pour [308 € en Guadeloupe](https://rci.fm/node/5556367) et 106 produits pour [325 € en Guyane](https://www.guyane.gouv.fr/Actions-de-l-Etat/Bouclier-Qualite-Prix/BQP-Bouclier-qualite-prix-2026). La Martinique a aussi le sien, avec une liste différente. En rayon, repérez le logo BQP.
+
+### Où trouver des paniers anti-gaspi en Guadeloupe, Martinique et Guyane ?
+
+Sur l'application Gaspiz, gratuite sur iPhone et Android. Choisissez votre territoire, repérez les commerçants près de chez vous, réservez votre panier puis payez sur place en le récupérant.
